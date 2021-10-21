@@ -1,1 +1,1 @@
-Tasks for odoo
+Odoo tasks
