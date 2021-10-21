@@ -26,3 +26,14 @@ class PolishTest(models.Model):
                        translate=True)
     date_of_birth = fields.Date(string="DateOFBirth", required=True)
     time = fields.Datetime(string="Time", help="Mould filling time", default=lambda *x: datetime.now())
+
+    test_id = fields.Many2one(comodel_name="polish", string="Test")
+
+
+class Polish(models.Model):
+    _name = "polish"
+    _description = "Polish"
+
+    polish_test_ids = fields.One2many(comodel_name="polish.test", inverse_name='test_id', string="polish")
+
+    name = fields.Char(string="Name")

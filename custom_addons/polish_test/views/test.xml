@@ -30,6 +30,7 @@
                 <form string="Polish Test">
                     <sheet>
                         <group col="4">
+                            <field name="test_id"/>
                             <field name="name"/>
                             <field name="age"/>
                             <field name="date_of_birth"/>
@@ -49,6 +50,8 @@
                 </form>
             </field>
         </record>
+
+
 
         <record id="polish_test_kanban_view" model="ir.ui.view">
             <field name="name">polish.test.kanban</field>
