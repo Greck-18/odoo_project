@@ -1,1 +1,0 @@
-from . import polish_test2
