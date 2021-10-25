@@ -33,7 +33,6 @@ class PolishTest2(models.Model):
     def _onchange_check_all(self):
         if self.check_all:
             self.check1 = self.check2 = True
-            self.text = "{%s}" % (self.env["polish.test2"]._fields['check2'].string)
         else:
             self.check1 = self.check2 = False
             self.text = ""

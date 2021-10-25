@@ -44,6 +44,3 @@ class PolishTest(models.Model):
                   "view_mode": "form",
                   "target": "new"}
         return wizard
-
-
-
