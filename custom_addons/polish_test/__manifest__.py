@@ -13,7 +13,7 @@ You could use this simplified accounting in case you work with an (external) acc
     'category': 'Accounting/Accounting',
     'website': 'https://www.odoo.com/page/billing',
     'images': [],
-    'depends': ['base', 'mail'],
+    'depends': ['base'],
     'data': [
         'views/test.xml',
         'security/ir.model.access.csv'
