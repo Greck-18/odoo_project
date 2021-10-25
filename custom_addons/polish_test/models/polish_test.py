@@ -7,6 +7,8 @@ class PolishTest(models.Model):
     _description = "Polish Test"
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
+    respondent_name = fields.Char(string="Name")
+
     name = fields.Char(string="Name", translate=True, default="Dan")
     age = fields.Integer(string="Age", default="18")
     is_work = fields.Boolean(string="Work", help="Click,if you work")
@@ -29,6 +31,13 @@ class PolishTest(models.Model):
 
     test_id = fields.Many2one(comodel_name="polish", string="Test")
 
+    # respondent_id = fields.Many2one("res.partner", string="Respondent")
+    # respondent_city = fields.Char(string="Respondent city", related="respondent_id.city", readonly=True)
+
+    # partner_id = fields.Many2one('res.partner', string='Recipient', required=True)
+    # company_id = fields.Many2one('res.company', string='Company', required=True, readonly=True,
+    #                              default=lambda self: self.env.company.id)
+
     def wizard_open(self):
         wizard = {"type": "ir.actions.act_window",
                   "res_model": "polish.test.entry.wizard",
@@ -37,8 +46,4 @@ class PolishTest(models.Model):
         return wizard
 
 
-class Polish(models.Model):
-    _name = "polish"
-    _description = "Polish"
 
-    polish_test_ids = fields.One2many(comodel_name="polish.test", inverse_name='test_id', string="polish")

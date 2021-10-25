@@ -1,177 +1,182 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <odoo>
-        <record id="polish_test_tree_view" model="ir.ui.view">
-            <field name="name">polish.test.tree</field>
-            <field name="model">polish.test</field>
-            <field name="arch" type="xml">
-                <tree string="Polish test">
-                    <field name="name"/>
-                    <field name="age"/>
-                    <field name="date_of_birth"/>
-                    <field name="email"/>
-                    <field name="height"/>
-                    <field name="photo"/>
-                    <field name="is_work"/>
-                    <field name="gender"/>
-                    <field name="note"/>
-                    <field name="salary"/>
-                    <field name="image"/>
-                    <field name="message"/>
-                    <field name="time"/>
-                </tree>
-            </field>
-        </record>
+    <record id="polish_test_tree_view" model="ir.ui.view">
+        <field name="name">polish.test.tree</field>
+        <field name="model">polish.test</field>
+        <field name="arch" type="xml">
+            <tree string="Polish test">
+                <field name="name"/>
+                <field name="age"/>
+                <field name="date_of_birth"/>
+                <field name="email"/>
+                <field name="height"/>
+                <field name="photo"/>
+                <field name="is_work"/>
+                <field name="gender"/>
+                <field name="note"/>
+                <field name="salary"/>
+                <field name="image"/>
+                <field name="message"/>
+                <field name="time"/>
+            </tree>
+        </field>
+    </record>
 
-        <record id="polish_test_form_view" model="ir.ui.view">
-            <field name="name">polish.test.form</field>
-            <field name="model">polish.test</field>
-            <field name="arch" type="xml">
-                <form string="Polish Test">
-                    <header>
-                        <button name="wizard_open" string="Chose Test" type="object" class="oe_highlight"/>
-                    </header>
-                    <sheet>
-                        <group col="4">
-                            <field name="test_id"/>
-                            <field name="name"/>
-                            <field name="age"/>
-                            <field name="date_of_birth"/>
-                            <field name="email"/>
-                            <field name="height"/>
-                            <field name="photo"/>
-                            <field name="is_work"/>
-                            <field name="gender"/>
-                            <field name="currency_id"/>
-                            <field name="note"/>
-                            <field name="salary"/>
-                            <field name="image"/>
-                            <field name="message"/>
-                            <field name="time"/>
-                        </group>
-                    </sheet>
-                </form>
-            </field>
-        </record>
+    <record id="polish_test_form_view" model="ir.ui.view">
+        <field name="name">polish.test.form</field>
+        <field name="model">polish.test</field>
+        <field name="arch" type="xml">
+            <form string="Polish Test">
+                <header>
+                    <button name="wizard_open" string="Chose Test" type="object" class="oe_highlight"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="age"/>
+<!--                        <field name="respondent_id"/>-->
+<!--                        <field name="respondent_city"/>-->
+                    </group>
+
+                    <group col="4">
+
+                        <field name="date_of_birth"/>
+                        <field name="email"/>
+                        <field name="height"/>
+                        <field name="photo"/>
+                        <field name="is_work"/>
+                        <field name="gender"/>
+                        <field name="currency_id"/>
+                        <field name="note"/>
+                        <field name="salary"/>
+                        <field name="image"/>
+                        <field name="test_id"/>
+                        <field name="message"/>
+                        <field name="time"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
 
 
-
-        <record id="polish_test_kanban_view" model="ir.ui.view">
-            <field name="name">polish.test.kanban</field>
-            <field name="model">polish.test</field>
-            <field name="arch" type="xml">
-                <kanban class="o_polish_test">
-                    <field name="id"/>
-                    <field name="name"/>
-                    <field name="age"/>
-                    <field name="email"/>
-                    <field name="photo"/>
-                    <templates>
-                        <t t-name="kanban-box">
-                            <div t-attf-class="oe_kanban_global_click">
-                                <div class="o_kanban_image">
-                                    <img t-att-src="kanban_image('polish.test','image_medium',record.id.raw_value)" alt="Avatar"/>
-                                </div>
-                                <div class="oe_kanban_details">
-                                    <ul>
-                                        <li>
-                                            <field name="name"/>
-                                        </li>
-                                        <li>
-                                            <field name="age"/>
-                                        </li>
-                                        <li>
-                                            <field name="date_of_birth"/>
-                                        </li>
-                                        <li>
-                                            <field name="email"/>
-                                        </li>
-                                        <li>
-                                            <field name="gender"/>
-                                        </li>
-                                        <li>
-                                            <field name="salary"/>
-                                        </li>
-                                        <li>
-                                            <field name="time"/>
-                                        </li>
-                                    </ul>
-                                </div>
+    <record id="polish_test_kanban_view" model="ir.ui.view">
+        <field name="name">polish.test.kanban</field>
+        <field name="model">polish.test</field>
+        <field name="arch" type="xml">
+            <kanban class="o_polish_test">
+                <field name="id"/>
+                <field name="name"/>
+                <field name="age"/>
+                <field name="email"/>
+                <field name="photo"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div class="o_kanban_image">
+                                <img t-att-src="kanban_image('polish.test','image_medium',record.id.raw_value)"
+                                     alt="Avatar"/>
                             </div>
-                        </t>
-                    </templates>
-                </kanban>
-            </field>
-        </record>
-
-        <record id="polish_test_activity_view" model="ir.ui.view">
-            <field name="name">polish.test.activity</field>
-            <field name="model">polish.test</field>
-            <field name="arch" type="xml">
-                <activity string="Polish Test">
-                    <templates>
-                        <div t-name="activity-box">
-                            <div>
-                                <field name="name" display="full"/>
+                            <div class="oe_kanban_details">
+                                <ul>
+                                    <li>
+                                        <field name="name"/>
+                                    </li>
+                                    <li>
+                                        <field name="age"/>
+                                    </li>
+                                    <li>
+                                        <field name="date_of_birth"/>
+                                    </li>
+                                    <li>
+                                        <field name="email"/>
+                                    </li>
+                                    <li>
+                                        <field name="gender"/>
+                                    </li>
+                                    <li>
+                                        <field name="salary"/>
+                                    </li>
+                                    <li>
+                                        <field name="time"/>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
-                    </templates>
-                </activity>
-            </field>
-        </record>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
 
-        <record id="polish_test_form_search" model="ir.ui.view">
-            <field name="name">polish.test.search</field>
-            <field name="model">polish.test</field>
-            <field name="arch" type="xml">
-                <search string="Polish Test">
-                    <field name="name"/>
-                    <field name="email"/>
-                    <field name="note"/>
-                    <field name="salary"/>
-                    <group expand="1" string="Group By">
-                        <filter string="Gender" name="gender" context="{'group_by':'gender'}"/>
-                        <filter string="Name" name="name" context="{'group_by':'name'}"/>
-                        <filter string="Age" name="age" context="{'group_by':'age'}"/>
-                    </group>
-                </search>
-            </field>
-        </record>
+    <record id="polish_test_activity_view" model="ir.ui.view">
+        <field name="name">polish.test.activity</field>
+        <field name="model">polish.test</field>
+        <field name="arch" type="xml">
+            <activity string="Polish Test">
+                <templates>
+                    <div t-name="activity-box">
+                        <div>
+                            <field name="name" display="full"/>
+                        </div>
+                    </div>
+                </templates>
+            </activity>
+        </field>
+    </record>
 
-
-        <record id="polish_test_calendar_view" model="ir.ui.view">
-            <field name="name">polish.test.calendar</field>
-            <field name="model">polish.test</field>
-            <field name="arch" type="xml">
-                <calendar string="Polish Test" date_start="create_date"  event_open_popup="True" >
-                    <field name="name"/>
-                </calendar>
-            </field>
-        </record>
-
-
-        <record id="polish_test_view_graph" model="ir.ui.view">
-            <field name="name">polish.test.view.graph</field>
-            <field name="model">polish.test</field>
-            <field name="arch" type="xml">
-                <graph string="Polish Test" type="pie">
-                    <field name="age"/>
-                    <field name="name"/>
-                    <field name="salary"/>
-                </graph>
-            </field>
-        </record>
+    <record id="polish_test_form_search" model="ir.ui.view">
+        <field name="name">polish.test.search</field>
+        <field name="model">polish.test</field>
+        <field name="arch" type="xml">
+            <search string="Polish Test">
+                <field name="name"/>
+                <field name="email"/>
+                <field name="note"/>
+                <field name="salary"/>
+                <group expand="1" string="Group By">
+                    <filter string="Gender" name="gender" context="{'group_by':'gender'}"/>
+                    <filter string="Name" name="name" context="{'group_by':'name'}"/>
+                    <filter string="Age" name="age" context="{'group_by':'age'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
 
 
+    <record id="polish_test_calendar_view" model="ir.ui.view">
+        <field name="name">polish.test.calendar</field>
+        <field name="model">polish.test</field>
+        <field name="arch" type="xml">
+            <calendar string="Polish Test" date_start="create_date" event_open_popup="True">
+                <field name="name"/>
+            </calendar>
+        </field>
+    </record>
 
-        <record id="action_polish_test_list" model="ir.actions.act_window">
-            <field name="name">Polish Test</field>
-            <field name="res_model">polish.test</field>
-            <field name="view_mode">kanban,tree,form,activity,calendar,graph</field>
-        </record>
 
-        <menuitem id="menu_polish_test_list"
-                  action="action_polish_test_list"/>
+    <record id="polish_test_view_graph" model="ir.ui.view">
+        <field name="name">polish.test.view.graph</field>
+        <field name="model">polish.test</field>
+        <field name="arch" type="xml">
+            <graph string="Polish Test" type="pie">
+                <field name="age"/>
+                <field name="name"/>
+                <field name="salary"/>
+            </graph>
+        </field>
+    </record>
+
+
+    <record id="action_polish_test_list" model="ir.actions.act_window">
+        <field name="name">Polish Test</field>
+        <field name="res_model">polish.test</field>
+        <field name="view_mode">kanban,tree,form,activity,calendar,graph</field>
+    </record>
+
+    <menuitem id="menu_polish_test_list"
+              action="action_polish_test_list"/>
 
 </odoo>
 

@@ -2,3 +2,4 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_polish_test,polish.test,model_polish_test,base.group_user,1,1,1,1
 access_polish_test2,polish.test2,model_polish_test2,base.group_user,1,1,1,1
 access_polish_test_entry_wizard,polish.test.entry.wizard,model_polish_test_entry_wizard,base.group_user,1,1,1,1
+access_res_partner,res.partner,model_res_partner,base.group_user,1,1,1,1
