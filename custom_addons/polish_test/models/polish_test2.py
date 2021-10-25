@@ -36,14 +36,18 @@ class PolishTest2(models.Model):
             self.text = "{%s}" % (self.env["polish.test2"]._fields['check2'].string)
         else:
             self.check1 = self.check2 = False
+            self.text = ""
 
-    @api.onchange("check1", "check2")
+    @api.onchange("check1")
     def _onchange_check1(self):
         if self.check1 and not self.check2:
             self.text = f"[{self.env['polish.test2']._fields['check1'].string}]"
         elif self.check1 and self.check2:
-            self.text = f"[{self.env['polish.test2']._fields['check1'].string}]"
-        elif not self.check1:
+            self.text = "{%s}" % (self.env["polish.test2"]._fields[
+                                      'check2'].string) + f" [{self.env['polish.test2']._fields['check1'].string}]"
+        elif not self.check1 and self.check2:
+            self.text = self.text.split()[0]
+        elif not self.check2 and not self.check1:
             self.text = ""
 
     @api.onchange("check2")
@@ -51,7 +55,9 @@ class PolishTest2(models.Model):
         if self.check2 and not self.check1:
             self.text = "{%s}" % (self.env["polish.test2"]._fields['check2'].string)
         elif self.check2 and self.check1:
-            self.text = "{%s}" % (self.env["polish.test2"]._fields['check2'].string)
-        elif self.check2:
+            self.text = f"[{self.env['polish.test2']._fields['check1'].string}]" + " {%s}" % (
+                self.env["polish.test2"]._fields['check2'].string)
+        elif not self.check2 and self.check1:
+            self.text = self.text.split()[0]
+        elif not self.check2 and not self.check1:
             self.text = ""
-

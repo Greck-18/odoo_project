@@ -28,6 +28,9 @@
             <field name="model">polish.test</field>
             <field name="arch" type="xml">
                 <form string="Polish Test">
+                    <header>
+                        <button name="wizard_open" string="Chose Test" type="object" class="oe_highlight"/>
+                    </header>
                     <sheet>
                         <group col="4">
                             <field name="test_id"/>

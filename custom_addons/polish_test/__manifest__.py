@@ -17,7 +17,9 @@ You could use this simplified accounting in case you work with an (external) acc
     'data': [
         'views/test.xml',
         'views/test2.xml',
+        'wizard/polish_test_entry_wizard_views.xml',
         'security/ir.model.access.csv'
+
     ],
     'demo': [
     ],

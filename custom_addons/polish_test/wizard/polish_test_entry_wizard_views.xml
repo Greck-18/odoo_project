@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+        <record id="polish_test_entry_wizard_form" model="ir.ui.view">
+            <field name="name">polish.test.entry.wizard.form</field>
+            <field name="model">polish.test.entry.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Chose Test">
+                    <group class="oe_title">
+                        <field name="test"/>
+                    </group>
+                    <group>
+                        <field name="date"/>
+                    </group>
+                    <footer>
+                        <button string="Chose" type="object" name="chose_test" class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+</odoo>
+
+
