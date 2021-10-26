@@ -19,13 +19,15 @@ class PolishTestEntry(models.TransientModel):
     date = fields.Date(required=True, default=lambda self: fields.Date.context_today(self))
 
     def create_contact(self):
-        context = {"display_name": self.name,
-                   "email": self.email,
-                   "city": self.city,
-                   "date": self.date,
-                   "test": self.test
-                   }
         if not self.env["res.partner"].search([("name", "=", self.name)]):
             self.is_wizard_made = True
+            context = {"display_name": self.name,
+                       "email": self.email,
+                       "city": self.city,
+                       "date": self.date,
+                       "test": self.test,
+                       "is_wizard_made": self.is_wizard_made
+                       }
+
             return self.env["res.partner"].create(context)
         raise UserError(_("Chose another name"))

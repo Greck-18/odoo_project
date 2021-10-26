@@ -7,8 +7,6 @@ class PolishTest(models.Model):
     _description = "Polish Test"
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
-    respondent_name = fields.Char(string="Name")
-
     name = fields.Char(string="Name", translate=True)
     age = fields.Integer(string="Age", default="18")
     is_work = fields.Boolean(string="Work", help="Click,if you work")
@@ -17,6 +15,7 @@ class PolishTest(models.Model):
     photo = fields.Binary(string="Photo", help="Upload file")
     message = fields.Html(string="Message")
     image = fields.Image(string="Image")
+    is_wizard_made = fields.Boolean(string="Check")
     currency_id = fields.Many2one("res.currency", string="currency")
     salary = fields.Monetary(string="Salary")
     gender = fields.Selection([
@@ -31,10 +30,8 @@ class PolishTest(models.Model):
 
     test_id = fields.Many2one(comodel_name="polish", string="Test")
 
-    partner_id = fields.Many2one("res.partner", string="Partner", on_delete="set null",
-                                 )
+    partner_id = fields.Many2one("res.partner", string="Partner")
 
-    # partner_city = fields.Char(string="Partner city", related="partner_id.city", readonly=True)
 
     def wizard_open(self):
         wizard = {"type": "ir.actions.act_window",
@@ -42,6 +39,5 @@ class PolishTest(models.Model):
                   "view_mode": "form",
                   "target": "new",
                   "context": {"default_name": self.name,
-                              # "default_city": self.partner_city,
                               "default_email": self.email}}
         return wizard
