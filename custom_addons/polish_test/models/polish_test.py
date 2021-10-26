@@ -34,9 +34,6 @@ class PolishTest(models.Model):
     # respondent_id = fields.Many2one("res.partner", string="Respondent")
     # respondent_city = fields.Char(string="Respondent city", related="respondent_id.city", readonly=True)
 
-    # partner_id = fields.Many2one('res.partner', string='Recipient', required=True)
-    # company_id = fields.Many2one('res.company', string='Company', required=True, readonly=True,
-    #                              default=lambda self: self.env.company.id)
 
     def wizard_open(self):
         wizard = {"type": "ir.actions.act_window",

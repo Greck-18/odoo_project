@@ -18,7 +18,7 @@ You could use this simplified accounting in case you work with an (external) acc
         'views/polish_test_views.xml',
         'views/polish_test2_views.xml',
         'wizard/polish_test_entry_wizard_views.xml',
-        'views/res_partner_views.xml'
+        'views/res_partner_views.xml',
         'security/ir.model.access.csv'
 
     ],
