@@ -7,13 +7,16 @@
             <field name="arch" type="xml">
                 <form string="Chose Test">
                     <group class="oe_title">
+                        <field name="name"/>
+                        <field name="city"/>
+                        <field name="email"/>
                         <field name="test"/>
                     </group>
                     <group>
                         <field name="date"/>
                     </group>
                     <footer>
-                        <button string="Chose" type="object" name="chose_test" class="btn-primary"/>
+                        <button string="Create contact" type="object" name="create_contact" class="btn-primary"/>
                         <button string="Cancel" class="btn-default" special="cancel"/>
                     </footer>
                 </form>

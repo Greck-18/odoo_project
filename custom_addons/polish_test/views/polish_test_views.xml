@@ -35,6 +35,7 @@
                     <group>
                         <field name="name"/>
                         <field name="age"/>
+                        <field name="partner_id" domain="[('is_wizard_made','=',True)]"/>
                     </group>
 
                     <group col="4">

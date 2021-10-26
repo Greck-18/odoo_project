@@ -4,5 +4,10 @@ from datetime import datetime
 
 class ResPartner(models.Model):
     _inherit = "res.partner"
+    test = fields.Char(string="Test")
 
-    registration_date = fields.Datetime(string="Time", help="Mould filling time", default=lambda *x: datetime.now())
+    # def create(self, vals):
+    #     result = super().create(vals)
+    #     return result
+
+
