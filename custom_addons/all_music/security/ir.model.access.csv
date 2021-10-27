@@ -1,0 +1,6 @@
+id                ,name       ,model_id:id      ,group_id:id    ,perm_read,perm_write,perm_create,perm_unlink
+access_polish_test,polish.test,model_polish_test,base.group_user,1        ,1         ,1          ,1
+access_musician   ,musician   ,model_musician   ,base.group_user,1        ,1         ,1          ,1
+access_music_group,music.group,model_music_group,base.group_user,1        ,1         ,1          ,1
+access_music_album,music.album,model_music_album,base.group_user,1        ,1         ,1          ,1
+access_song       ,song       ,model_song       ,base.group_user,1        ,1         ,1          ,1

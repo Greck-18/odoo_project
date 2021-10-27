@@ -2,7 +2,7 @@
     'name': 'Polish Test',
     'version': '1.1',
     'summary': 'Invoices & Payments',
-    'sequence': 10,
+    'sequence': 2,
     'description': """
 Invoicing & Payments
 ====================

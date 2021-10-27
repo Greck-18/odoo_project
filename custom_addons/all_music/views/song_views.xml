@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="song_view_tree" model="ir.ui.view">
+            <field name="name">song.view</field>
+            <field name="model">song</field>
+            <field name="arch" type="xml">
+                <tree string="Song">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+
+
+        <record id="action_music_album_list" model="ir.actions.act_window">
+        <field name="name">Music Album</field>
+        <field name="res_model">music.album</field>
+        <field name="view_mode">tree</field>
+        </record>
+
+</odoo>
