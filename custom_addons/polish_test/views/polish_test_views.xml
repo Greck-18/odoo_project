@@ -35,7 +35,7 @@
                     <group>
                         <field name="name"/>
                         <field name="age"/>
-                        <field name="partner_id" />
+                        <field name="partner_id" domain="[('is_polish_test_wizard_made','=',True)]"/>
                     </group>
 
                     <group col="4">

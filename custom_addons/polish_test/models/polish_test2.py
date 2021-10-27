@@ -13,12 +13,12 @@ class PolishTest2(models.Model):
         [("1", "1"),
          ("2", "2"),
          ("3", "3")
-         ])
+         ], string="Select1")
     select2 = fields.Selection([
         ("4", "4"),
         ("5", "5"),
         ("6", "6")
-    ])
+    ], string="Select2")
     boolean1 = fields.Boolean(string="1")
     boolean2 = fields.Boolean(string="2")
     boolean3 = fields.Boolean(string="3")

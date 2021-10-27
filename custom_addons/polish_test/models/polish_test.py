@@ -5,7 +5,7 @@ from datetime import datetime
 class PolishTest(models.Model):
     _name = "polish.test"
     _description = "Polish Test"
-    _inherit = ['mail.thread', 'mail.activity.mixin']
+    _inherit = ["mail.thread", "mail.activity.mixin"]
 
     name = fields.Char(string="Name", translate=True)
     age = fields.Integer(string="Age", default="18")
@@ -19,9 +19,9 @@ class PolishTest(models.Model):
     currency_id = fields.Many2one("res.currency", string="currency")
     salary = fields.Monetary(string="Salary")
     gender = fields.Selection([
-        ('male', 'Male'),
-        ('female', 'Female'),
-        ('other', 'Other')
+        ("male", "Male"),
+        ("female", "Female"),
+        ("other", "Other")
     ], string="Gender")
     note = fields.Text(string="About yourself", help="Tell about yourself",
                        translate=True)
