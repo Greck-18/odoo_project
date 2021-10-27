@@ -1,22 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <odoo>
-        <record id="music_album_view_tree" model="ir.ui.view">
-            <field name="name">music.album.view</field>
-            <field name="model">music.album</field>
-            <field name="arch" type="xml">
-                <tree string="Music Album">
-                    <field name="name"/>
-                </tree>
-            </field>
-        </record>
 
-
-
-        <record id="action_music_album_list" model="ir.actions.act_window">
-        <field name="name">Music Album</field>
+    <record id="music_album_action" model="ir.actions.act_window">
+        <field name="name">MusicAlbum</field>
         <field name="res_model">music.album</field>
-        <field name="view_mode">tree</field>
-        </record>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                You has no music album yet
+              </p>
+        </field>
+    </record>
+
+
+
+
+    <menuitem id="music_album"
+              name="Music Album"
+              parent="music_root"
+              action="music_album_action"
+              sequence="10"/>
+
 
 </odoo>

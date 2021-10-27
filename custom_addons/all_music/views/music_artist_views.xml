@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record id="music_artist_view_form" model="ir.ui.view">
+        <field name="name">music.artist.form</field>
+        <field name="model">music.artist</field>
+        <field name="arch" type="xml">
+            <form string="Music Artist">
+                <sheet>
+                    <field name="name"/>
+                    <field name="song_ids"/>
+<!--                    <group>-->
+<!--                    <field name="avatar" widget="image" class="oe_avatar" nolabel="1"/>-->
+<!--                    </group>-->
+<!--                    <group class="oe_title">-->
+
+<!--                        <h1>-->
+<!--                            <field name="name" default_focus="1" placeholder="Name"/>-->
+<!--                        </h1>-->
+<!--                    </group>-->
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="music_artist_action" model="ir.actions.act_window">
+        <field name="name">MusicArtist</field>
+        <field name="res_model">music.artist</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                create your first artist!
+            </p>
+        </field>
+    </record>
+
+
+    <menuitem id="music_root"
+              name="Music"
+              sequence="10"/>
+
+    <menuitem id="music_artist_root"
+              name="Music Artist"
+              parent="music_root"
+              action="music_artist_action"
+              sequence="10"/>
+
+</odoo>

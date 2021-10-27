@@ -1,20 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <odoo>
-        <record id="music_group_view_tree" model="ir.ui.view">
-            <field name="name">music.group.view</field>
-            <field name="model">music.group</field>
-            <field name="arch" type="xml">
-                <tree string="Music Group">
-                    <field name="name"/>
-                </tree>
-            </field>
-        </record>
+
+    <record id="music_group_action" model="ir.actions.act_window">
+        <field name="name">MusicGroup</field>
+        <field name="res_model">music.group</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                create your first group!
+            </p>
+        </field>
+    </record>
 
 
-        <record id="action_music_album_list" model="ir.actions.act_window">
-        <field name="name">Music Album</field>
-        <field name="res_model">music.album</field>
-        <field name="view_mode">tree</field>
-        </record>
+
+
+    <menuitem id="music_group_root"
+              name="Music Group"
+              parent="music_root"
+              action="music_group_action"
+              sequence="10"/>
+
 
 </odoo>

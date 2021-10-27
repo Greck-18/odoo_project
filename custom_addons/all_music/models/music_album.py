@@ -7,6 +7,6 @@ class Album(models.Model):
 
     name = fields.Char(string="Name", required=True)
     release_data = fields.Date(string="Date of release")
-    musician_id = fields.Many2one(string="Musician", comodel_name="musician", required=True)
+    musician_id = fields.Many2one(string="Musician", comodel_name="music.artist", required=True)
     song_ids = fields.One2many(string="Song", comodel_name="song", inverse_name="album_id", required=True)
     group_id = fields.Many2one(string="Group", comodel_name="music.group", required=True)
