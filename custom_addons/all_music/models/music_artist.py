@@ -16,6 +16,3 @@ class MusicArtist(models.Model):
     song_ids = fields.One2many(string="Song", comodel_name="song", inverse_name="musician_id",required=True)
     album_ids = fields.One2many(string="Album", comodel_name="music.album", inverse_name="musician_id")
     group_id = fields.Many2one(string="Group", comodel_name="music.group")
-
-    def wizard_open(self):
-        print("Nice")

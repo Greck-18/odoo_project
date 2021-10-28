@@ -3,5 +3,5 @@ access_music_artist,music.artist,model_music_artist,base.group_user,1,1,1,1
 access_music_album,music.album,model_music_album,base.group_user,1,1,1,1
 access_music_group,music.group,model_music_group,base.group_user,1,1,1,1
 access_song,song,model_song,base.group_user,1,1,1,1
-
+access_music_menu_wizard,music.menu.wizard,model_music_menu_wizard,base.group_user,1,1,1,1
 

@@ -25,9 +25,6 @@
         <field name="model">music.artist</field>
         <field name="arch" type="xml">
             <form string="Music Artist">
-                <header>
-                    <button name="wizard_open" string="Load xml" type="object" class="oe_highlight"/>
-                </header>
                 <sheet>
                     <group>
                         <field name="name"/>
