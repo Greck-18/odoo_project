@@ -2,10 +2,62 @@
 
 <odoo>
 
+
+    <record id="music_album_tree_view" model="ir.ui.view">
+            <field name="name">music.album.tree</field>
+            <field name="model">music.album</field>
+            <field name="arch" type="xml">
+                <tree string="Music Album">
+                    <field name="name"/>
+                    <field name="release_data"/>
+                    <field name="musician_id"/>
+                </tree>
+            </field>
+    </record>
+
+
+    <record id="music_album_kanban_view" model="ir.ui.view">
+            <field name="name">music.album.view</field>
+            <field name="model">music.album</field>
+            <field name="arch" type="xml">
+                <kanban class="o_music_album">
+                    <field name="name"/>
+                    <field name="release_data"/>
+                    <field name="musician_id"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="oe_kanban_details">
+                                    <ul>
+                                        <li>
+                                            <field name="name"/>
+                                        </li>
+                                        <li>
+                                            <field name="release_data"/>
+                                        </li>
+<!--                                        <li>-->
+<!--                                            <field name="musician_id"/>-->
+<!--                                        </li>-->
+                                    </ul>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+
+
+
+
+
+
+
     <record id="music_album_action" model="ir.actions.act_window">
-        <field name="name">MusicAlbum</field>
+        <field name="name">Music Album</field>
         <field name="res_model">music.album</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">kanban,tree,form</field>
         <field name="help" type="html">
               <p class="o_view_nocontent_smiling_face">
                 You has no music album yet
@@ -21,6 +73,8 @@
               parent="music_root"
               action="music_album_action"
               sequence="10"/>
+
+
 
 
 </odoo>

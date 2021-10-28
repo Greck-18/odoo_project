@@ -2,10 +2,77 @@
 
 <odoo>
 
+    <record id="music_group_tree_view" model="ir.ui.view">
+            <field name="name">music.group.tree</field>
+            <field name="model">music.group</field>
+            <field name="arch" type="xml">
+                <tree string="Music Group">
+                    <field name="name"/>
+                    <field name="month_listeners"/>
+                    <field name="musician_ids"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="music_group_form_view" model="ir.ui.view">
+            <field name="name">music.group.form</field>
+            <field name="model">music.group</field>
+            <field name="arch" type="xml">
+                <form string="Music Group">
+                    <header>
+                        <button name="wizard_open" string="Load xml" type="object" class="oe_highlight"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="month_listeners"/>
+                            <field name="musician_ids"/>
+                            <field name="song_ids"/>
+                            <field name="album_ids"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="music_group_kanban_view" model="ir.ui.view">
+            <field name="name">music.group.view</field>
+            <field name="model">music.group</field>
+            <field name="arch" type="xml">
+                <kanban class="o_music_group">
+                    <field name="name"/>
+                    <field name="month_listeners"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="oe_kanban_details">
+                                    <ul>
+                                        <li>
+                                            <field name="name"/>
+                                        </li>
+                                        <li>
+                                            <field name="month_listeners"/>
+                                        </li>
+                                        <li>
+                                            <field name="musician_ids"/>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+
+
+
     <record id="music_group_action" model="ir.actions.act_window">
-        <field name="name">MusicGroup</field>
+        <field name="name">Music Group</field>
         <field name="res_model">music.group</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">kanban,tree,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 create your first group!
@@ -18,9 +85,10 @@
 
     <menuitem id="music_group_root"
               name="Music Group"
+              sequence="10"
               parent="music_root"
-              action="music_group_action"
-              sequence="10"/>
+              action="music_group_action"/>
+
 
 
 </odoo>

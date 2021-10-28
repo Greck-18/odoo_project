@@ -10,11 +10,12 @@
     ],
     'depends': ['base'],
     'data': [
-        'views/music_album_views.xml',
-        'views/music_group_views.xml',
+        'security/ir.model.access.csv',
         'views/music_artist_views.xml',
+        'views/music_group_views.xml',
+        'views/music_album_views.xml',
         'views/song_views.xml',
-        'security/ir.model.access.csv'
+
     ],
     'demo': [
     ],

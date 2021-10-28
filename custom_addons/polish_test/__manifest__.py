@@ -19,6 +19,7 @@ You could use this simplified accounting in case you work with an (external) acc
         'views/polish_test2_views.xml',
         'wizard/polish_test_entry_wizard_views.xml',
         'views/res_partner_views.xml',
+        'wizard/music_artist_entry_wizard_views.xml',
         'security/ir.model.access.csv'
 
     ],

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+        <record id="music_artist_entry_wizard_form" model="ir.ui.view">
+            <field name="name">music.artist.entry.wizard.form</field>
+            <field name="model">music.artist.entry.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Input xml file">
+                    <group class="oe_title">
+                        <field name="xml_file"/>
+                    </group>
+                    <footer>
+                        <button string="Input file" type="object" name="download_file" class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+</odoo>
