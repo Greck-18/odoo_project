@@ -12,4 +12,4 @@ class MusicMenuWizard(models.TransientModel):
 
     def download_file(self):
         xml_data = base64.b64decode(self.xml_file).decode("utf-8").strip()
-
+        print(xml_data)
