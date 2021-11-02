@@ -1,0 +1,446 @@
+<music>
+    <Artists>
+
+        <artist>
+            <name>JAY-Z</name>
+            <month_listeners>24994961</month_listeners>
+            <age>51</age>
+            <sex>male</sex>
+            <country>USA</country>
+            <singles>
+                <songs>
+                    <song>
+                        <name>Entrepreneur</name>
+                        <duration>4:18</duration>
+                        <listeners>7199625</listeners>
+                    </song>
+                    <song>
+                        <name>Storm</name>
+                        <duration>3:51</duration>
+                        <listeners>307792</listeners>
+                    </song>
+                </songs>
+            </singles>
+            <albums>
+                <album>
+                    <name>
+                        4:44
+                    </name>
+
+                    <songs>
+                        <song>
+                            <name>Kill JAY-Z</name>
+                            <duration>2:58</duration>
+                            <listeners>5325174</listeners>
+                        </song>
+
+                        <song>
+                            <name>The story of o.j</name>
+                            <duration>3:51</duration>
+                            <listeners>32863070</listeners>
+                        </song>
+                        <song>
+                            <name>Moonlight</name>
+                            <duration>2:23</duration>
+                            <listeners>4539927</listeners>
+                        </song>
+                        <song>
+                            <name>Caught their eyes</name>
+                            <duration>3:26</duration>
+                            <listeners>8270128</listeners>
+                            <members>
+                                <member>
+                                    <name>
+                                        Frank Ocean
+                                    </name>
+                                </member>
+                            </members>
+                        </song>
+                    </songs>
+
+
+                    <release_date>
+                        06-30-2017
+                    </release_date>
+                </album>
+
+            </albums>
+        </artist>
+
+        <artist>
+            <name>Franc Ocean</name>
+            <month_listeners>15734123</month_listeners>
+            <age>33</age>
+            <sex>male</sex>
+            <country>USA</country>
+            <singles>
+                <songs>
+                    <song>
+                        <name>Caught their eyes</name>
+                        <duration>3:26</duration>
+                        <listeners>8270128</listeners>
+                        <members>
+                            <member>
+                                <name>
+                                    JAY-Z
+                                </name>
+                            </member>
+                        </members>
+                    </song>
+                    <song>
+                        <name>Chanel</name>
+                        <duration>3:30</duration>
+                        <listeners>460223704</listeners>
+                    </song>
+                    <song>
+                        <name>Biking</name>
+                        <duration>4:37</duration>
+                        <listeners>142487081</listeners>
+                        <members>
+                            <member>
+                                <name>
+                                    JAY-Z
+                                </name>
+                            </member>
+                            <member>
+                                <name>
+                                    Tyler the creator
+                                </name>
+                            </member>
+                        </members>
+                    </song>
+                </songs>
+            </singles>
+            <albums>
+                <album>
+                    <name>
+                        Channel orange
+                    </name>
+                    <songs>
+                        <song>
+                            <name>Thinkin bout u</name>
+                            <duration>3:20</duration>
+                            <listeners>547591232</listeners>
+                        </song>
+                        <song>
+                            <name>Not just money</name>
+                            <duration>0:59</duration>
+                            <listeners>32582818</listeners>
+                        </song>
+                        <song>
+                            <name>Lost</name>
+                            <duration>3:54</duration>
+                            <listeners>351093774</listeners>
+                        </song>
+                    </songs>
+                </album>
+                <album>
+                    <name>
+                        Blonde
+                    </name>
+
+                    <songs>
+                        <song>
+                            <name>Nikes</name>
+                            <duration>5:14</duration>
+                            <listeners>203384948</listeners>
+                        </song>
+                        <song>
+                            <name>Ivy</name>
+                            <duration>4:09</duration>
+                            <listeners>372038331</listeners>
+                        </song>
+                        <song>
+                            <name>Pink + white</name>
+                            <duration>3:04</duration>
+                            <listeners>392259433</listeners>
+                        </song>
+
+                    </songs>
+
+                    <release_date>
+                        08-20-2016
+                    </release_date>
+                </album>
+
+            </albums>
+
+        </artist>
+        <artist>
+            <name>Tyler the creator</name>
+            <month_listeners>15796810</month_listeners>
+            <age>30</age>
+            <sex>male</sex>
+            <country>USA</country>
+            <singles>
+                <songs>
+                    <song>
+                        <name>Lumberjack</name>
+                        <duration>2:18</duration>
+                        <listeners>48893900</listeners>
+                    </song>
+                    <song>
+                        <name>Biking</name>
+                        <duration>4:37</duration>
+                        <listeners>142487081</listeners>
+                        <members>
+                            <member>
+                                <name>
+                                    JAY-Z
+                                </name>
+                            </member>
+                            <member>
+                                <name>
+                                    Franc Ocean
+                                </name>
+                            </member>
+                        </members>
+                    </song>
+                    <song>
+                        <name>Whoville</name>
+                        <duration>1:13</duration>
+                        <listeners>4078537</listeners>
+                    </song>
+                </songs>
+            </singles>
+        </artist>
+        <artist>
+            <name>XXXTentacion</name>
+            <month_listeners>27146629</month_listeners>
+            <age>20</age>
+            <sex>male</sex>
+            <country>USA</country>
+            <singles>
+                <songs>
+                    <song>
+                        <name>Jocelyn Flores</name>
+                        <duration>1:59</duration>
+                        <listeners>1558037350</listeners>
+                    </song>
+                    <song>
+                        <name>Sad!</name>
+                        <duration>2:46</duration>
+                        <listeners>1684064527</listeners>
+                    </song>
+                    <song>
+                        <name>Moonlight</name>
+                        <duration>2:15</duration>
+                        <listeners>1314081659</listeners>
+                    </song>
+                    <song>
+                        <name>Look at me</name>
+                        <duration>2:06</duration>
+                        <listeners>926715894</listeners>
+                    </song>
+                </songs>
+            </singles>
+        </artist>
+
+    </Artists>
+
+
+    <Groups>
+        <group>
+            <month_listeners>9623430</month_listeners>
+            <name>
+                Bring me the horizon
+            </name>
+            <artists>
+                <artist>
+                    <name>Oliver Sykes</name>
+                    <age>34</age>
+                    <sex>male</sex>
+                    <country>UK</country>
+                </artist>
+
+                <artist>
+                    <name>Jordan Fish</name>
+                    <age>35</age>
+                    <sex>male</sex>
+                    <country>UK</country>
+                </artist>
+                <artist>
+                    <name>Mat Nicholls</name>
+                    <age>35</age>
+                    <sex>male</sex>
+                    <country>UK</country>
+                </artist>
+                <artist>
+                    <name>Lee Malia</name>
+                    <age>34</age>
+                    <sex>male</sex>
+                    <country>UK</country>
+                </artist>
+                <artist>
+                    <name>Matt Kean</name>
+                    <age>35</age>
+                    <sex>male</sex>
+                    <country>UK</country>
+                </artist>
+                <artist>
+                    <name>Curtis Ward</name>
+                    <age>32</age>
+                    <sex>male</sex>
+                    <country>UK</country>
+                </artist>
+                <artist>
+                    <name>Jona Weinhofen</name>
+                    <age>38</age>
+                    <sex>male</sex>
+                    <country>Australia</country>
+                </artist>
+            </artists>
+
+            <albums>
+                <album>
+                    <name>
+                        That's the spirit
+                    </name>
+                    <release_date>09-11-2015</release_date>
+                    <songs>
+                        <song>
+                            <name>Thrown</name>
+                            <duration>3:11</duration>
+                            <listeners>243080528</listeners>
+                        </song>
+                        <song>
+                            <name>True friends</name>
+                            <duration>3:52</duration>
+                            <listeners>116361955</listeners>
+                        </song>
+                        <song>
+                            <name>Avalanche</name>
+                            <duration>4:22</duration>
+                            <listeners>96012132</listeners>
+                        </song>
+                        <song>
+                            <name>Drown</name>
+                            <duration>3:42</duration>
+                            <listeners>115093008</listeners>
+                        </song>
+                    </songs>
+                </album>
+            </albums>
+            <singles>
+                <songs>
+                    <song>
+                        <name>De4u</name>
+                        <duration>3:27</duration>
+                        <listeners>12580191</listeners>
+                    </song>
+                    <song>
+                        <name>Teardrops</name>
+                        <duration>3:35</duration>
+                        <listeners>63622074</listeners>
+                    </song>
+                    <song>
+                        <name>Parasite eve</name>
+                        <duration>4:51</duration>
+                        <listeners>89751266</listeners>
+                    </song>
+                </songs>
+            </singles>
+
+
+        </group>
+        <group>
+            <month_listeners>441482</month_listeners>
+            <name>
+                N.W.A
+            </name>
+            <artists>
+                <artist>
+                    <name>Eazy-E</name>
+                    <age>31</age>
+                    <sex>male</sex>
+                    <country>USA</country>
+                </artist>
+                <artist>
+                    <name>MC Ren</name>
+                    <age>52</age>
+                    <sex>male</sex>
+                    <country>USA</country>
+                </artist>
+                <artist>
+                    <name>Ice Cube</name>
+                    <age>52</age>
+                    <sex>male</sex>
+                    <country>USA</country>
+                </artist>
+                <artist>
+                    <name>DJ Yella</name>
+                    <age>53</age>
+                    <sex>male</sex>
+                    <country>USA</country>
+                </artist>
+                <artist>
+                    <name>Dr. Dre</name>
+                    <age>56</age>
+                    <sex>male</sex>
+                    <country>USA</country>
+                </artist>
+                <artist>
+                    <name>The D.O.C</name>
+                    <age>53</age>
+                    <sex>male</sex>
+                    <country>USA</country>
+                </artist>
+                <artist>
+                    <name>Arabian Prince</name>
+                    <age>56</age>
+                    <sex>male</sex>
+                    <country>USA</country>
+                </artist>
+            </artists>
+            <albums>
+                <album>
+                    <name>
+                        Straight Outta Compton
+                    </name>
+                    <release_date>08-08-1998</release_date>
+                    <songs>
+                        <song>
+                            <name>F**k the police</name>
+                            <duration>5:14</duration>
+                            <listeners>17690748</listeners>
+                        </song>
+                        <song>
+                            <name>Gangsta gangsta</name>
+                            <duration>4:06</duration>
+                            <listeners>1403422</listeners>
+                        </song>
+                        <song>
+                            <name>Express yourself</name>
+                            <duration>4:22</duration>
+                            <listeners>114549251</listeners>
+                        </song>
+                        <song>
+                            <name>If it ain't ruff</name>
+                            <duration>3:33</duration>
+                            <listeners>16553924</listeners>
+                        </song>
+                    </songs>
+                </album>
+                <album>
+                    <name>
+                        Efil4zaggin
+                    </name>
+                    <release_date>05-28-1991</release_date>
+                </album>
+                <songs>
+                    <song>
+                        <name>Real n**gas don't die</name>
+                        <duration>3:40</duration>
+                        <listeners>6959763</listeners>
+                    </song>
+                    <song>
+                        <name>Always into something</name>
+                        <duration>4:24</duration>
+                        <listeners>39773924</listeners>
+                    </song>
+                </songs>
+
+            </albums>
+        </group>
+    </Groups>
+</music>
