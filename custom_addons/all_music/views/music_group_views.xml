@@ -27,7 +27,7 @@
                             <field name="name"/>
                             <field name="month_listeners"/>
                             <field name="musician_ids"/>
-                            <field name="song_ids"/>
+                            <field name="single_ids"/>
                             <field name="album_ids"/>
                         </group>
                     </sheet>

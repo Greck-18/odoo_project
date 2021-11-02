@@ -3,30 +3,29 @@
 <odoo>
 
 
-    <record id="song_tree_view" model="ir.ui.view">
-            <field name="name">song.tree</field>
-            <field name="model">song</field>
+    <record id="single_tree_view" model="ir.ui.view">
+            <field name="name">single.tree</field>
+            <field name="model">single</field>
             <field name="arch" type="xml">
-                <tree string="Songs">
+                <tree string="Single">
                     <field name="name"/>
                     <field name="listeners"/>
                     <field name="duration"/>
-                    <field name="musician_id"/>
-
+<!--                    <field name="musician_id"/>-->
                 </tree>
             </field>
     </record>
 
 
-    <record id="song_kanban_view" model="ir.ui.view">
-            <field name="name">song.view</field>
-            <field name="model">song</field>
+    <record id="single_kanban_view" model="ir.ui.view">
+            <field name="name">single.view</field>
+            <field name="model">single</field>
             <field name="arch" type="xml">
-                <kanban class="o_song">
+                <kanban class="o_single">
                     <field name="name"/>
-                    <field name="listeners"/>
+                    <field name="artist_id"/>
                     <field name="duration"/>
-                    <field name="musician_id"/>
+                    <field name="listeners"/>
                     <field name="album_id"/>
                     <templates>
                         <t t-name="kanban-box">
@@ -36,9 +35,9 @@
                                         <li>
                                             <field name="name"/>
                                         </li>
-<!--                                        <li>-->
-<!--                                            <field name="musician_id"/>-->
-<!--                                        </li>-->
+                                        <li>
+                                            <field name="artist_id"/>
+                                        </li>
                                         <li>
                                             <field name="listeners"/>
                                         </li>
@@ -62,9 +61,9 @@
 
 
 
-    <record id="song_action" model="ir.actions.act_window">
-        <field name="name">Song</field>
-        <field name="res_model">song</field>
+    <record id="single_action" model="ir.actions.act_window">
+        <field name="name">Single</field>
+        <field name="res_model">single</field>
         <field name="view_mode">kanban,tree,form</field>
         <field name="help" type="html">
               <p class="o_view_nocontent_smiling_face">
@@ -76,9 +75,9 @@
 
 
 
-    <menuitem id="song_root"
+    <menuitem id="single_root"
               name="Songs"
-              action="song_action"
+              action="single_action"
               parent="music_root"
               sequence="10"/>
 </odoo>

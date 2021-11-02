@@ -14,7 +14,7 @@
         'views/music_artist_views.xml',
         'views/music_group_views.xml',
         'views/music_album_views.xml',
-        'views/song_views.xml',
+        'views/single_views.xml',
         'wizard/music_artist_wizard_views.xml'
 
     ],

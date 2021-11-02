@@ -7,9 +7,10 @@ class MusicGroup(models.Model):
     name = fields.Char(string="Name", required=True)
     avatar = fields.Binary(string="Image")
     month_listeners = fields.Integer(string="Month listeners", required=True)
-    musician_ids = fields.One2many(string="Musician", comodel_name="music.artist", inverse_name="group_id",required=True)
+    musician_ids = fields.One2many(string="Musician", comodel_name="music.artist", inverse_name="group_id",
+                                   required=True)
     album_ids = fields.One2many(string="Album", comodel_name="music.album", inverse_name="group_id")
-    song_ids = fields.One2many(string="Song", comodel_name="song", inverse_name="group_id",required=True)
+    single_ids = fields.One2many(string="Song", comodel_name="single", inverse_name="group_id", required=True)
 
     def wizard_open(self):
         print("hello")

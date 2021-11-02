@@ -10,10 +10,10 @@
             <tree string="Music Artist">
                 <field name="name"/>
                 <field name="age"/>
-                <field name="country"/>
+                <field name="country_id"/>
                 <field name="month_listeners"/>
                 <field name="avatar"/>
-                <field name="song_ids"/>
+                <field name="single_ids"/>
                 <field name="album_ids"/>
                 <field name="group_id"/>
             </tree>
@@ -29,13 +29,13 @@
                     <group>
                         <field name="name"/>
                         <field name="age"/>
-                        <field name="country"/>
+                        <field name="country_id"/>
                         <field name="month_listeners"/>
                         <field name="avatar"/>
                     </group>
                     <notebook>
                         <page string="Songs">
-                            <field name="song_ids" widget="one2many_tag"/>
+                            <field name="single_ids" widget="one2many_tag"/>
                         </page>
                         <page string="Albums">
                             <field name="album_ids"/>
@@ -57,7 +57,7 @@
             <kanban class="o_music_artist">
                 <field name="name"/>
                 <field name="age"/>
-                <field name="country"/>
+                <field name="country_id"/>
                 <field name="month_listeners"/>
                 <templates>
                     <t t-name="kanban-box">
@@ -71,7 +71,7 @@
                                         <field name="age"/>
                                     </li>
                                     <li>
-                                        <field name="country"/>
+                                        <field name="country_id"/>
                                     </li>
                                     <li>
                                         <field name="month_listeners"/>
@@ -89,7 +89,7 @@
     <record id="music_artist_action" model="ir.actions.act_window">
         <field name="name">Music Artist</field>
         <field name="res_model">music.artist</field>
-        <field name="view_mode">form,kanban,tree</field>
+        <field name="view_mode">kanban,form,tree</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 create your first artist!

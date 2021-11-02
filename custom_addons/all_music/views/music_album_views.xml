@@ -9,7 +9,7 @@
             <field name="arch" type="xml">
                 <tree string="Music Album">
                     <field name="name"/>
-                    <field name="release_data"/>
+                    <field name="release_date"/>
                     <field name="musician_id"/>
                 </tree>
             </field>
@@ -22,7 +22,7 @@
             <field name="arch" type="xml">
                 <kanban class="o_music_album">
                     <field name="name"/>
-                    <field name="release_data"/>
+                    <field name="release_date"/>
                     <field name="musician_id"/>
                     <templates>
                         <t t-name="kanban-box">
@@ -33,7 +33,7 @@
                                             <field name="name"/>
                                         </li>
                                         <li>
-                                            <field name="release_data"/>
+                                            <field name="release_date"/>
                                         </li>
 <!--                                        <li>-->
 <!--                                            <field name="musician_id"/>-->
