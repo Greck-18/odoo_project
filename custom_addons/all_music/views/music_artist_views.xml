@@ -10,7 +10,8 @@
             <tree string="Music Artist">
                 <field name="name"/>
                 <field name="age"/>
-                <field name="country_id"/>
+<!--                <field name="country_id"/>-->
+<!--                <field name="state_ids" widget="many2many_tags" domain="[('country_id', '=', country_id)]"/>-->
                 <field name="month_listeners"/>
                 <field name="avatar"/>
                 <field name="single_ids"/>
@@ -29,7 +30,7 @@
                     <group>
                         <field name="name"/>
                         <field name="age"/>
-                        <field name="country_id"/>
+<!--                        <field name="country_id"/>-->
                         <field name="month_listeners"/>
                         <field name="avatar"/>
                     </group>
@@ -57,7 +58,7 @@
             <kanban class="o_music_artist">
                 <field name="name"/>
                 <field name="age"/>
-                <field name="country_id"/>
+<!--                <field name="country_id"/>-->
                 <field name="month_listeners"/>
                 <templates>
                     <t t-name="kanban-box">
@@ -72,6 +73,9 @@
                                     </li>
                                     <li>
                                         <field name="country_id"/>
+                                    </li>
+                                    <li>
+                                        <field name="group_id" attrs="{'invisible':[('group_id','=',False)]}"/>
                                     </li>
                                     <li>
                                         <field name="month_listeners"/>
