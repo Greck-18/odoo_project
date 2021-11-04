@@ -2,63 +2,88 @@
 
 <odoo>
 
+    <record id="single_form_view" model="ir.ui.view">
+        <field name="name">single.form</field>
+        <field name="model">single</field>
+        <field name="arch" type="xml">
+            <form string="Single">
+                <sheet>
+                    <group>
+                        <group col="2">
+                            <field name="name"/>
+                            <field name="artist_id"/>
+                            <field name="listeners"/>
+                            <field name="duration"/>
+                        </group>
+                        <group>
+                            <field name="member_ids" widget="many2many_tags"
+                                   options="{'color_field': 'color','no_create_edit':True}"/>
+                            <field name="album_id"/>
+                            <field name="group_id"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
 
     <record id="single_tree_view" model="ir.ui.view">
-            <field name="name">single.tree</field>
-            <field name="model">single</field>
-            <field name="arch" type="xml">
-                <tree string="Single">
-                    <field name="name"/>
-                    <field name="listeners"/>
-                    <field name="duration"/>
-<!--                    <field name="musician_id"/>-->
-                </tree>
-            </field>
+        <field name="name">single.tree</field>
+        <field name="model">single</field>
+        <field name="arch" type="xml">
+            <tree string="Single">
+                <field name="name"/>
+                <field name="listeners"/>
+                <field name="duration"/>
+<!--                <field name="member_ids" widget="many2many_tags"/>-->
+                <field name="member_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                <!--                    <field name="musician_id"/>-->
+            </tree>
+        </field>
     </record>
 
 
     <record id="single_kanban_view" model="ir.ui.view">
-            <field name="name">single.view</field>
-            <field name="model">single</field>
-            <field name="arch" type="xml">
-                <kanban class="o_single">
-                    <field name="name"/>
-                    <field name="artist_id"/>
-                    <field name="duration"/>
-                    <field name="listeners"/>
-                    <field name="album_id"/>
-                    <templates>
-                        <t t-name="kanban-box">
-                            <div t-attf-class="oe_kanban_global_click">
-                                <div class="oe_kanban_details">
-                                    <ul>
-                                        <li>
-                                            <field name="name"/>
-                                        </li>
-                                        <li>
-                                            <field name="artist_id"/>
-                                        </li>
-                                        <li>
-                                            <field name="listeners"/>
-                                        </li>
-                                        <li>
-                                            <field name="duration"/>
-                                        </li>
-                                        <li>
-                                            <field name="album_id"/>
-                                        </li>
-                                        <li>
-                                            <field name="group_id"/>
-                                        </li>
-                                    </ul>
-                                </div>
+        <field name="name">single.view</field>
+        <field name="model">single</field>
+        <field name="arch" type="xml">
+            <kanban class="o_single">
+                <field name="name"/>
+                <field name="artist_id"/>
+                <field name="duration"/>
+                <field name="listeners"/>
+                <field name="album_id"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div class="oe_kanban_details">
+                                <ul>
+                                    <li>
+                                        <field name="name"/>
+                                    </li>
+                                    <li>
+                                        <field name="artist_id"/>
+                                    </li>
+                                    <li>
+                                        <field name="listeners"/>
+                                    </li>
+                                    <li>
+                                        <field name="duration"/>
+                                    </li>
+                                    <li>
+                                        <field name="album_id"/>
+                                    </li>
+                                    <li>
+                                        <field name="group_id"/>
+                                    </li>
+                                </ul>
                             </div>
-                        </t>
-                    </templates>
-                </kanban>
-            </field>
-        </record>
-
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
 
 
     <record id="single_action" model="ir.actions.act_window">
@@ -66,13 +91,11 @@
         <field name="res_model">single</field>
         <field name="view_mode">kanban,tree,form</field>
         <field name="help" type="html">
-              <p class="o_view_nocontent_smiling_face">
+            <p class="o_view_nocontent_smiling_face">
                 You has no songs yet
-              </p>
+            </p>
         </field>
     </record>
-
-
 
 
     <menuitem id="single_root"

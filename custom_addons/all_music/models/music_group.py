@@ -1,4 +1,5 @@
 from odoo import models, fields, api, _
+from odoo.exceptions import UserError
 
 
 class MusicGroup(models.Model):
@@ -15,3 +16,8 @@ class MusicGroup(models.Model):
     @api.onchange("month_listeners")
     def _onchange_month_listeners(self):
         self.artist_ids.month_listeners = self.month_listeners
+
+    @api.onchange("name")
+    def _onchange_name(self):
+        if self.env["music.group"].search([("name", "=", self.name)]):
+            raise UserError(_("A group with the same name already exists"))

@@ -1,4 +1,5 @@
 from odoo import models, fields, api, _
+from odoo.exceptions import UserError
 
 
 class Single(models.Model):
@@ -7,7 +8,13 @@ class Single(models.Model):
     name = fields.Char(string="Name", required=True)
     listeners = fields.Integer(string="Listeners", required=True)
     duration = fields.Char(string="Duration", required=True)
-    members = fields.Char(string="Member")
+    member_ids = fields.Char(string="Member")
+    # member_ids = fields.Many2many(string="Member", comodel_name="music.artist")
     artist_id = fields.Many2one(string="Artist", comodel_name="music.artist")
     album_id = fields.Many2one(string="Album", comodel_name="music.album")
     group_id = fields.Many2one(string="Group", comodel_name="music.group")
+
+    @api.onchange("name")
+    def _onchange_name(self):
+        if self.env["single"].search([("name", "=", self.name)]):
+            raise UserError(_("A song with the same name already exists"))

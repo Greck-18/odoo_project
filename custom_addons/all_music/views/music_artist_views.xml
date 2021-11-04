@@ -30,7 +30,7 @@
                     <group>
                         <field name="name"/>
                         <field name="age"/>
-<!--                        <field name="country_id"/>-->
+                        <field name="country_id"/>
                         <field name="month_listeners"/>
                         <field name="avatar"/>
                     </group>
