@@ -12,19 +12,24 @@ class MusicMenuWizard(models.TransientModel):
 
     xml_file = fields.Binary(string="Input xml")
 
+    @staticmethod
+    def _convert_to_member(member_tag):
+        """The function parses all members in the song"""
+        member = ""
+        for i in member_tag.findall("member/name"):
+            member += f"{i.text.strip()},"
+        return member[:-1]
+
     # парсинг песен
     @staticmethod
     def _parse_singles(song_tag, artist_info):
+        """The function parses all information about the songs of the artist and the group"""
         data = []
         for iter in song_tag.findall("songs/song"):
             artist_songs = {}
             for song in iter:
                 if song.tag == "members":
-                    song.tag = f"{song.tag[:-1]}_ids"
-                    song.text = "member"
-                    # MusicMenuWizard._pars_id_member()
-                    # MusicMenuWizard._convert_to_member(song.findall('member/name'))
-                    # song.text=
+                    song.text = MusicMenuWizard._convert_to_member(song)
                 elif song.tag == "listeners":
                     song.text = int(song.text)
                 artist_songs[song.tag] = song.text
@@ -34,15 +39,14 @@ class MusicMenuWizard(models.TransientModel):
     # парсинг альбома
     @staticmethod
     def _parse_albums(albums_tag, artist_info):
+        """The function parses all information about the artist's and group's album"""
         data = []
         artist_album = {}
         for iter in albums_tag.findall("album/songs/"):
             artist_album_songs = {}
             for album in iter:
                 if album.tag == "members":
-                    album.tag = f"{album.tag[:-1]}_ids"
-                    album.text = "member"
-                    # MusicMenuWizard._convert_to_member(album)
+                    album.text = MusicMenuWizard._convert_to_member(album)
                 elif album.tag == "listeners":
                     album.text = int(album.text)
                 artist_album_songs[album.tag] = album.text
@@ -57,8 +61,8 @@ class MusicMenuWizard(models.TransientModel):
                 artist_album[album.tag] = album.text.strip()
         artist_info[f"{albums_tag.tag[:-1]}_ids"] = [(0, 0, artist_album)]
 
-    # @staticmethod
     def _parse_group_artists(self, group_tag, group_info):
+        """The function parses all information about the artist of the group"""
         data = []
         for iter in group_tag.findall("artist"):
             group_artists = {}
@@ -78,9 +82,10 @@ class MusicMenuWizard(models.TransientModel):
 
     # информация об артистах
     def download_file(self):
-        print(self.env['music.artist'].name)
+        """ The function takes xml file and parses it"""
         artist_store = []
         group_store = []
+        num = 0
         if not self.xml_file:
             raise UserError(_("Input your xml file!"))
         xml_data = base64.b64decode(self.xml_file).decode("utf-8").strip()
@@ -123,6 +128,11 @@ class MusicMenuWizard(models.TransientModel):
                         group_info[group.tag] = group.text.strip()
             group_store.append(group_info)
 
-        pprint.pprint(artist_store)
-        self.env["music.artist"].create(artist_store)
-        self.env["music.group"].create(group_store)
+        self.env['music.artist'].create(artist_store)
+        self.env['music.group'].create(group_store)
+
+        for i in range(len(group_store)):
+            for record in self.env["music.artist"].search([("group_id", '=', group_store[num]['name'])]):
+                record.month_listeners = self.env['music.group'].search(
+                    [("name", "=", group_store[num]['name'])]).month_listeners
+            num += 1

@@ -3,67 +3,80 @@
 <odoo>
 
     <record id="music_group_tree_view" model="ir.ui.view">
-            <field name="name">music.group.tree</field>
-            <field name="model">music.group</field>
-            <field name="arch" type="xml">
-                <tree string="Music Group">
-                    <field name="name"/>
-                    <field name="month_listeners"/>
-                    <field name="artist_ids"/>
-                </tree>
-            </field>
-        </record>
-
-        <record id="music_group_form_view" model="ir.ui.view">
-            <field name="name">music.group.form</field>
-            <field name="model">music.group</field>
-            <field name="arch" type="xml">
-                <form string="Music Group">
-                    <sheet>
-                        <group>
-                            <field name="name"/>
-                            <field name="month_listeners"/>
-                            <field name="artist_ids"/>
-                            <field name="single_ids"/>
-                            <field name="album_ids"/>
-                        </group>
-                    </sheet>
-                </form>
-            </field>
-        </record>
+        <field name="name">music.group.tree</field>
+        <field name="model">music.group</field>
+        <field name="arch" type="xml">
+            <tree string="Music Group">
+                <field name="name"/>
+                <field name="month_listeners"/>
+                <field name="artist_ids" />
+                <field name="album_ids" />
+            </tree>
+        </field>
+    </record>
 
 
-        <record id="music_group_kanban_view" model="ir.ui.view">
-            <field name="name">music.group.view</field>
-            <field name="model">music.group</field>
-            <field name="arch" type="xml">
-                <kanban class="o_music_group">
-                    <field name="name"/>
-                    <field name="month_listeners"/>
-                    <templates>
-                        <t t-name="kanban-box">
-                            <div t-attf-class="oe_kanban_global_click">
-                                <div class="oe_kanban_details">
-                                    <ul>
-                                        <li>
-                                            <field name="name"/>
-                                        </li>
-                                        <li>
-                                            <field name="month_listeners"/>
-                                        </li>
-                                        <li>
-                                            <field name="artist_ids"/>
-                                        </li>
-                                    </ul>
-                                </div>
+    <record id="music_group_form_view" model="ir.ui.view">
+        <field name="name">music.group.form</field>
+        <field name="model">music.group</field>
+        <field name="arch" type="xml">
+            <form string="Music Group">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="month_listeners"/>
+                        <field name="artist_ids" />
+                        <field name="single_ids" />
+                        <field name="album_ids" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="music_group_kanban_view" model="ir.ui.view">
+        <field name="name">music.group.view</field>
+        <field name="model">music.group</field>
+        <field name="arch" type="xml">
+            <kanban class="o_music_group">
+                <field name="name"/>
+                <field name="month_listeners"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div class="oe_kanban_details">
+                                <ul>
+                                    <li>
+                                        <field name="name"/>
+                                    </li>
+                                    <li>
+                                        <field name="month_listeners"/>
+                                    </li>
+                                    <li>
+                                        <field name="album_ids"/>
+                                    </li>
+                                </ul>
                             </div>
-                        </t>
-                    </templates>
-                </kanban>
-            </field>
-        </record>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
 
 
+    <record id="music_group_form_search" model="ir.ui.view">
+        <field name="name">music.group.search</field>
+        <field name="model">music.group</field>
+        <field name="arch" type="xml">
+            <search string="Music Group">
+                <field name="name"/>
+                <field name="single_ids"/>
+                <field name="album_ids"/>
+            </search>
+        </field>
+    </record>
 
 
     <record id="music_group_action" model="ir.actions.act_window">
@@ -78,14 +91,11 @@
     </record>
 
 
-
-
     <menuitem id="music_group_root"
               name="Music Group"
               sequence="10"
               parent="music_root"
               action="music_group_action"/>
-
 
 
 </odoo>

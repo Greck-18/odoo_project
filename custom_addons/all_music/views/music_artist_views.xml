@@ -10,8 +10,7 @@
             <tree string="Music Artist">
                 <field name="name"/>
                 <field name="age"/>
-<!--                <field name="country_id"/>-->
-<!--                <field name="state_ids" widget="many2many_tags" domain="[('country_id', '=', country_id)]"/>-->
+                <field name="country_id"/>
                 <field name="month_listeners"/>
                 <field name="avatar"/>
                 <field name="single_ids"/>
@@ -28,15 +27,24 @@
             <form string="Music Artist">
                 <sheet>
                     <group>
-                        <field name="name"/>
-                        <field name="age"/>
-                        <field name="country_id"/>
-                        <field name="month_listeners"/>
-                        <field name="avatar"/>
+                        <group>
+                            <div class="oe_title">
+                                <h1>
+                                    <field name="name" default_focus="1" placeholder="Name"/>
+                                    <field name="avatar" widget="image" nolabel="1" class="oe_avatar oe_left"/>
+                                </h1>
+                            </div>
+
+                        </group>
+                        <group>
+                            <field name="age"/>
+                            <field name="country_id"/>
+                            <field name="month_listeners"/>
+                        </group>
                     </group>
                     <notebook>
                         <page string="Songs">
-                            <field name="single_ids" widget="one2many_tag"/>
+                            <field name="single_ids"/>
                         </page>
                         <page string="Albums">
                             <field name="album_ids"/>
@@ -58,7 +66,7 @@
             <kanban class="o_music_artist">
                 <field name="name"/>
                 <field name="age"/>
-<!--                <field name="country_id"/>-->
+                <field name="country_id"/>
                 <field name="month_listeners"/>
                 <templates>
                     <t t-name="kanban-box">
@@ -75,7 +83,7 @@
                                         <field name="country_id"/>
                                     </li>
                                     <li>
-                                        <field name="group_id" attrs="{'invisible':[('group_id','=',False)]}"/>
+                                        <field name="group_id"/>
                                     </li>
                                     <li>
                                         <field name="month_listeners"/>
@@ -86,6 +94,25 @@
                     </t>
                 </templates>
             </kanban>
+        </field>
+    </record>
+
+
+    <record id="music_artist_form_search" model="ir.ui.view">
+        <field name="name">music.artist.search</field>
+        <field name="model">music.artist</field>
+        <field name="arch" type="xml">
+            <search string="Music Artist">
+                <field name="name"/>
+                <field name="group_id"/>
+                <field name="album_ids"/>
+                <field name="single_ids"/>
+                <field name="country_id"/>
+                <group expand="1" string="Group By">
+                    <filter string="Group" name="group_id" context="{'group_by':'group_id'}"/>
+                    <filter string="Country" name="country_id" context="{'group_by':'country_id'}"/>
+                </group>
+            </search>
         </field>
     </record>
 

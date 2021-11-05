@@ -8,8 +8,9 @@ class MusicAlbum(models.Model):
 
     name = fields.Char(string="Name", required=True)
     release_date = fields.Date(string="Date of release")
-    musician_id = fields.Many2one(string="Musician", comodel_name="music.artist")
-    single_ids = fields.One2many(string="Song", comodel_name="single", inverse_name="album_id", required=True)
+    artist_id = fields.Many2one(string="Artist", comodel_name="music.artist")
+    single_ids = fields.One2many(string="Song", comodel_name="single", inverse_name="album_id", required=True,
+                                 ondelete="cascade")
     group_id = fields.Many2one(string="Group", comodel_name="music.group")
 
     @api.onchange("name")

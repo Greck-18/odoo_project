@@ -10,7 +10,8 @@
                 <tree string="Music Album">
                     <field name="name"/>
                     <field name="release_date"/>
-                    <field name="musician_id"/>
+                    <field name="artist_id"/>
+                    <field name="group_id"/>
                 </tree>
             </field>
     </record>
@@ -23,7 +24,7 @@
                 <kanban class="o_music_album">
                     <field name="name"/>
                     <field name="release_date"/>
-                    <field name="musician_id"/>
+                    <field name="artist_id"/>
                     <templates>
                         <t t-name="kanban-box">
                             <div t-attf-class="oe_kanban_global_click">
@@ -35,9 +36,12 @@
                                         <li>
                                             <field name="release_date"/>
                                         </li>
-<!--                                        <li>-->
-<!--                                            <field name="musician_id"/>-->
-<!--                                        </li>-->
+                                        <li>
+                                            <field name="artist_id"/>
+                                        </li>
+                                        <li>
+                                            <field name="group_id"/>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -46,6 +50,25 @@
                 </kanban>
             </field>
         </record>
+
+
+
+
+    <record id="music_album_form_search" model="ir.ui.view">
+        <field name="name">music.album.search</field>
+        <field name="model">music.album</field>
+        <field name="arch" type="xml">
+            <search string="Music Album">
+                <field name="artist_id"/>
+                <field name="single_ids"/>
+                <field name="group_id"/>
+                <group expand="1" string="Group By">
+                    <filter string="Group" name="group_id" context="{'group_by':'group_id'}"/>
+                    <filter string="Artist" name="artist_id" context="{'group_by':'artist_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
 
 
 

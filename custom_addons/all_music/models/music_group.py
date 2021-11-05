@@ -9,13 +9,11 @@ class MusicGroup(models.Model):
     avatar = fields.Binary(string="Image")
     month_listeners = fields.Integer(string="Month listeners", required=True)
     artist_ids = fields.One2many(string="Artist", comodel_name="music.artist", inverse_name="group_id",
-                                 required=True)
-    album_ids = fields.One2many(string="Album", comodel_name="music.album", inverse_name="group_id")
-    single_ids = fields.One2many(string="Song", comodel_name="single", inverse_name="group_id", required=True)
+                                 required=True, ondelete="cascade")
+    album_ids = fields.One2many(string="Album", comodel_name="music.album", inverse_name="group_id", ondelete="cascade")
+    single_ids = fields.One2many(string="Song", comodel_name="single", inverse_name="group_id", required=True,
+                                 ondelete="cascade")
 
-    @api.onchange("month_listeners")
-    def _onchange_month_listeners(self):
-        self.artist_ids.month_listeners = self.month_listeners
 
     @api.onchange("name")
     def _onchange_name(self):
