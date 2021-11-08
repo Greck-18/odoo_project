@@ -4,6 +4,7 @@ import random
 
 
 class MusicArtist(models.Model):
+    """Model artist"""
     _name = "music.artist"
     _description = "Info about musician"
 
@@ -24,6 +25,7 @@ class MusicArtist(models.Model):
 
     @api.onchange("name")
     def _onchange_name(self):
+        """restriction on the introduction of an already created artist"""
         if self.env["music.artist"].search([("name", "=", self.name)]):
             raise UserError(_("Artist with the same name already exists"))
 
@@ -41,4 +43,3 @@ class MusicArtist(models.Model):
                 }
             song_info.append((0, 0, context))
         self.single_ids = song_info
-

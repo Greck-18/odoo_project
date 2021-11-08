@@ -12,6 +12,28 @@ class MusicMenuWizard(models.TransientModel):
 
     xml_file = fields.Binary(string="Input xml")
 
+    def create_artist_record(self, artist_store, group_store):
+        """Create record if not exists , if exists only update record"""
+        for artist in artist_store:
+            if artist['name'] in self.env['music.artist'].search([]).mapped('name'):
+                self.env['music.artist'].write(artist)
+            else:
+                self.env['music.artist'].create(artist)
+        for group in group_store:
+            if group['name'] in self.env['music.group'].search([]).mapped('name'):
+                self.env['music.group'].write(group)
+            else:
+                self.env['music.group'].create(group)
+
+    def group_artist_listeners(self, group_store):
+        """Add listeners for each group artist"""
+        num = 0
+        for i in range(len(group_store)):
+            for record in self.env["music.artist"].search([("group_id", '=', group_store[num]['name'])]):
+                record.month_listeners = self.env['music.group'].search(
+                    [("name", "=", group_store[num]['name'])]).month_listeners
+            num += 1
+
     @staticmethod
     def _convert_to_member(member_tag):
         """The function parses all members in the song"""
@@ -32,6 +54,8 @@ class MusicMenuWizard(models.TransientModel):
                     song.text = MusicMenuWizard._convert_to_member(song)
                 elif song.tag == "listeners":
                     song.text = int(song.text)
+                elif song.tag == "duration":
+                    song.text = float(song.text.replace(':', '.'))
                 artist_songs[song.tag] = song.text
             data.append((0, 0, artist_songs))
         artist_info[f"{song_tag.tag[:-1]}_ids"] = data
@@ -49,6 +73,8 @@ class MusicMenuWizard(models.TransientModel):
                     album.text = MusicMenuWizard._convert_to_member(album)
                 elif album.tag == "listeners":
                     album.text = int(album.text)
+                elif album.tag == "duration":
+                    album.text = float(album.text.replace(':', '.'))
                 artist_album_songs[album.tag] = album.text
             data.append((0, 0, artist_album_songs))
         for album in albums_tag.findall("album/"):
@@ -85,14 +111,13 @@ class MusicMenuWizard(models.TransientModel):
         """ The function takes xml file and parses it"""
         artist_store = []
         group_store = []
-        num = 0
         if not self.xml_file:
             raise UserError(_("Input your xml file!"))
         xml_data = base64.b64decode(self.xml_file).decode("utf-8").strip()
         myroot = ET.fromstring(xml_data)
-        for iter in myroot[0]:
+        for artists in myroot[0]:
             artist_info = {}
-            for artist in iter:
+            for artist in artists:
                 if artist.tag == "singles":
                     MusicMenuWizard._parse_singles(artist, artist_info)
                 elif artist.tag == "albums":
@@ -112,9 +137,9 @@ class MusicMenuWizard(models.TransientModel):
                     artist_info[artist.tag] = artist.text
             artist_store.append(artist_info)
 
-        for iter in myroot[1]:
+        for groups in myroot[1]:
             group_info = {}
-            for group in iter:
+            for group in groups:
                 if group.tag == "singles":
                     MusicMenuWizard._parse_singles(group, group_info)
                 elif group.tag == "albums":
@@ -127,12 +152,8 @@ class MusicMenuWizard(models.TransientModel):
                     else:
                         group_info[group.tag] = group.text.strip()
             group_store.append(group_info)
+        pprint.pprint(artist_store)
+        pprint.pprint(group_store)
 
-        self.env['music.artist'].create(artist_store)
-        self.env['music.group'].create(group_store)
-
-        for i in range(len(group_store)):
-            for record in self.env["music.artist"].search([("group_id", '=', group_store[num]['name'])]):
-                record.month_listeners = self.env['music.group'].search(
-                    [("name", "=", group_store[num]['name'])]).month_listeners
-            num += 1
+        MusicMenuWizard.create_artist_record(self, artist_store, group_store)
+        MusicMenuWizard.group_artist_listeners(self, group_store)

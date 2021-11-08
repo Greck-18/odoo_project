@@ -3,6 +3,7 @@ from odoo.exceptions import UserError
 
 
 class MusicAlbum(models.Model):
+    """Model album"""
     _name = "music.album"
     _description = "Musician album"
 
@@ -15,5 +16,6 @@ class MusicAlbum(models.Model):
 
     @api.onchange("name")
     def _onchange_name(self):
+        """restriction on the introduction of an already created album"""
         if self.env["music.album"].search([("name", "=", self.name)]):
             raise UserError(_("A album with the same name already exists"))

@@ -3,6 +3,7 @@ from odoo.exceptions import UserError
 
 
 class MusicGroup(models.Model):
+    """Model group"""
     _name = "music.group"
     _description = "Info about group"
     name = fields.Char(string="Name", required=True)
@@ -14,8 +15,8 @@ class MusicGroup(models.Model):
     single_ids = fields.One2many(string="Song", comodel_name="single", inverse_name="group_id", required=True,
                                  ondelete="cascade")
 
-
     @api.onchange("name")
     def _onchange_name(self):
+        """restriction on the introduction of an already created group"""
         if self.env["music.group"].search([("name", "=", self.name)]):
             raise UserError(_("A group with the same name already exists"))

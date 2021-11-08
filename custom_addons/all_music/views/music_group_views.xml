@@ -9,8 +9,8 @@
             <tree string="Music Group">
                 <field name="name"/>
                 <field name="month_listeners"/>
-                <field name="artist_ids" />
-                <field name="album_ids" />
+                <field name="artist_ids"/>
+                <field name="album_ids" widget="many2many_tags"/>
             </tree>
         </field>
     </record>
@@ -25,7 +25,7 @@
                     <group>
                         <field name="name"/>
                         <field name="month_listeners"/>
-                        <field name="artist_ids" />
+                        <field name="artist_ids"/>
                         <field name="single_ids" />
                         <field name="album_ids" />
                     </group>
