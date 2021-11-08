@@ -4,54 +4,56 @@
 
 
     <record id="music_album_tree_view" model="ir.ui.view">
-            <field name="name">music.album.tree</field>
-            <field name="model">music.album</field>
-            <field name="arch" type="xml">
-                <tree string="Music Album">
-                    <field name="name"/>
-                    <field name="release_date"/>
-                    <field name="artist_id"/>
-                    <field name="group_id"/>
-                </tree>
-            </field>
+        <field name="name">music.album.tree</field>
+        <field name="model">music.album</field>
+        <field name="arch" type="xml">
+            <tree string="Music Album">
+                <field name="name"/>
+                <field name="release_date"/>
+                <field name="artist_id"/>
+                <field name="group_id"/>
+            </tree>
+        </field>
     </record>
 
 
     <record id="music_album_kanban_view" model="ir.ui.view">
-            <field name="name">music.album.view</field>
-            <field name="model">music.album</field>
-            <field name="arch" type="xml">
-                <kanban class="o_music_album">
-                    <field name="name"/>
-                    <field name="release_date"/>
-                    <field name="artist_id"/>
-                    <templates>
-                        <t t-name="kanban-box">
-                            <div t-attf-class="oe_kanban_global_click">
-                                <div class="oe_kanban_details">
-                                    <ul>
-                                        <li>
-                                            <field name="name"/>
-                                        </li>
-                                        <li>
-                                            <field name="release_date"/>
-                                        </li>
-                                        <li>
-                                            <field name="artist_id"/>
-                                        </li>
-                                        <li>
-                                            <field name="group_id"/>
-                                        </li>
-                                    </ul>
-                                </div>
+        <field name="name">music.album.view</field>
+        <field name="model">music.album</field>
+        <field name="arch" type="xml">
+            <kanban class="o_music_album">
+                <field name="name"/>
+                <field name="release_date"/>
+                <field name="artist_id"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div class="oe_kanban_details">
+                                <ul>
+                                    <li>
+                                        <b>Name:</b>
+                                        <field name="name"/>
+                                    </li>
+                                    <li>
+                                        <b>Release:</b>
+                                        <field name="release_date"/>
+                                    </li>
+                                    <li>
+                                        <b attrs="{'invisible': [('artist_id', '=', False)]}">Artist:</b>
+                                        <field name="artist_id"/>
+                                    </li>
+                                    <li>
+                                        <b attrs="{'invisible': [('group_id', '=', False)]}">Group:</b>
+                                        <field name="group_id"/>
+                                    </li>
+                                </ul>
                             </div>
-                        </t>
-                    </templates>
-                </kanban>
-            </field>
-        </record>
-
-
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
 
 
     <record id="music_album_form_search" model="ir.ui.view">
@@ -71,24 +73,16 @@
     </record>
 
 
-
-
-
-
-
-
     <record id="music_album_action" model="ir.actions.act_window">
         <field name="name">Music Album</field>
         <field name="res_model">music.album</field>
         <field name="view_mode">kanban,tree,form</field>
         <field name="help" type="html">
-              <p class="o_view_nocontent_smiling_face">
+            <p class="o_view_nocontent_smiling_face">
                 You has no music album yet
-              </p>
+            </p>
         </field>
     </record>
-
-
 
 
     <menuitem id="music_album"
@@ -96,8 +90,6 @@
               parent="music_root"
               action="music_album_action"
               sequence="10"/>
-
-
 
 
 </odoo>

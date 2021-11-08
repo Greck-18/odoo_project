@@ -8,7 +8,7 @@ class MusicGroup(models.Model):
     _description = "Info about group"
     name = fields.Char(string="Name", required=True)
     avatar = fields.Binary(string="Image")
-    month_listeners = fields.Integer(string="Month listeners", required=True)
+    month_listeners = fields.Integer(string="Month listeners")
     artist_ids = fields.One2many(string="Artist", comodel_name="music.artist", inverse_name="group_id",
                                  required=True, ondelete="cascade")
     album_ids = fields.One2many(string="Album", comodel_name="music.album", inverse_name="group_id", ondelete="cascade")
@@ -17,6 +17,5 @@ class MusicGroup(models.Model):
 
     @api.onchange("name")
     def _onchange_name(self):
-        """restriction on the introduction of an already created group"""
-        if self.env["music.group"].search([("name", "=", self.name)]):
-            raise UserError(_("A group with the same name already exists"))
+        if self.env["music.album"].search([("name", "=", self.name)]):
+            raise UserError(_("Group with the same name already exists"))

@@ -56,22 +56,22 @@
                             <div class="oe_kanban_details">
                                 <ul>
                                     <li>
-                                        <field name="name"/>
+                                        <b>Name:</b><field name="name"/>
                                     </li>
                                     <li>
-                                        <field name="artist_id" attrs="{'invisible':[('album_id','=',True)]}"/>
+                                        <b attrs="{'invisible': [('artist_id', '=', False)]}">Artist:</b><field name="artist_id" attrs="{'invisible':[('album_id','=',True)]}"/>
                                     </li>
                                     <li>
-                                        <field name="listeners"/>
+                                        <b>Listeners:</b><field name="listeners"/>
                                     </li>
                                     <li>
-                                        <field name="duration" widget="float_time" class="oe_inline"/>
+                                        <b>Duration:</b><field name="duration" widget="float_time" class="oe_inline"/>
                                     </li>
                                     <li>
-                                        <field name="album_id"/>
+                                        <b attrs="{'invisible': [('album_id', '=', False)]}">Album:</b><field name="album_id"/>
                                     </li>
                                     <li>
-                                        <field name="group_id" attrs="{'invisible':[('artist_id','=',True)]}"/>
+                                        <b attrs="{'invisible': [('group_id', '=', False)]}">Group:</b><field name="group_id"/>
                                     </li>
                                 </ul>
                             </div>

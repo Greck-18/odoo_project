@@ -40,17 +40,15 @@
                             <field name="age"/>
                             <field name="country_id"/>
                             <field name="month_listeners"/>
+                            <field name="group_id"/>
                         </group>
                     </group>
                     <notebook>
-                        <page string="Songs">
+                        <page string="Singles">
                             <field name="single_ids"/>
                         </page>
                         <page string="Albums">
                             <field name="album_ids"/>
-                        </page>
-                        <page string="Group">
-                            <field name="group_id"/>
                         </page>
                     </notebook>
                 </sheet>
@@ -64,28 +62,38 @@
         <field name="model">music.artist</field>
         <field name="arch" type="xml">
             <kanban class="o_music_artist">
+                <field name="id"/>
                 <field name="name"/>
                 <field name="age"/>
                 <field name="country_id"/>
                 <field name="month_listeners"/>
+                <field name="avatar" nolabel="1" widget="image" class="oe_right oe_avatar"/>
                 <templates>
                     <t t-name="kanban-box">
                         <div t-attf-class="oe_kanban_global_click">
+                            <div class="o_kanban_image">
+                                <img t-att-src="kanban_image('music.artist', 'avatar',record.id.raw_value)" alt="Image"/>
+                            </div>
                             <div class="oe_kanban_details">
                                 <ul>
                                     <li>
+                                        <b>Name:</b>
                                         <field name="name"/>
                                     </li>
                                     <li>
+                                        <b>Age:</b>
                                         <field name="age"/>
                                     </li>
                                     <li>
+                                        <b>Country:</b>
                                         <field name="country_id"/>
                                     </li>
                                     <li>
+                                        <b>Group:</b>
                                         <field name="group_id"/>
                                     </li>
                                     <li>
+                                        <b>Listeners:</b>
                                         <field name="month_listeners"/>
                                     </li>
                                 </ul>
@@ -123,7 +131,7 @@
         <field name="view_mode">kanban,form,tree</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
-                create your first artist!
+                Create your first artist!
             </p>
         </field>
     </record>

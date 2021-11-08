@@ -1,6 +1,5 @@
 from odoo import models, fields, api, _
 from odoo.exceptions import UserError
-import random
 
 
 class MusicArtist(models.Model):
@@ -8,14 +7,13 @@ class MusicArtist(models.Model):
     _name = "music.artist"
     _description = "Info about musician"
 
-    color = fields.Integer(string='Color Index')
     name = fields.Char(string="Name", required=True)
     sex = fields.Selection([("male", "Male"),
                             ("female", "Female"),
                             ("other", "Other")], string="Sex")
-    age = fields.Char(string="Age")
-    avatar = fields.Binary(string="Image")
-    country_id = fields.Many2one("res.country", string="Country")
+    age = fields.Integer(string="Age")
+    avatar = fields.Image(string="Image")
+    country_id = fields.Many2one(comodel_name="res.country", string="Country")
     month_listeners = fields.Integer(string="Month listeners")
     single_ids = fields.One2many(string="Singles", comodel_name="single", inverse_name="artist_id", required=True,
                                  ondelete="cascade")
@@ -25,9 +23,9 @@ class MusicArtist(models.Model):
 
     @api.onchange("name")
     def _onchange_name(self):
-        """restriction on the introduction of an already created artist"""
         if self.env["music.artist"].search([("name", "=", self.name)]):
-            raise UserError(_("Artist with the same name already exists"))
+            raise UserError(_("Group with the same name already exists"))
+
 
     @api.onchange("album_ids")
     def _onchange_album_ids(self):

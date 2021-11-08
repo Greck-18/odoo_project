@@ -28,7 +28,7 @@
 
 
         <menuitem id="music_wizard_menu"
-                  name="Download xml"
+                  name="Upload xml"
                   parent="music_root"
                   action="music_wizard_action"
                   sequence="10"/>
