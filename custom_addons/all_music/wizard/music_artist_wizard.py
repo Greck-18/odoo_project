@@ -51,6 +51,14 @@ class MusicMenuWizard(models.TransientModel):
                 record.month_listeners = self.env['music.group'].search(
                     [("name", "=", group_store[i]['name'])]).month_listeners
 
+    # def single_artist_listeners(self):
+    #     """Add listeners for single group from each artists"""
+    #     single_group_listeners = self.env['music.group'].search(
+    #         [("name", "=", "Single Group")]).month_listeners
+    #     for record in self.env['music.artist'].search([("group_id", "=", "Single Group")]):
+    #         single_group_listeners += record.month_listeners
+    #     print()
+
     @staticmethod
     def _convert_to_member(member_tag):
         """The function parses all members in the song"""
@@ -127,6 +135,7 @@ class MusicMenuWizard(models.TransientModel):
                         artist_info[artist.tag] = int(artist.text)
                     else:
                         artist_info[artist.tag] = artist.text
+                artist_info["group_id"] = self.env.ref("all_music.single_artist_group").id
             artist_store.append(artist_info)
 
         for groups in my_root.find("./Groups"):

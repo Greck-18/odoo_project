@@ -32,7 +32,6 @@ class PolishTest(models.Model):
 
     partner_id = fields.Many2one("res.partner", string="Partner")
 
-
     def wizard_open(self):
         wizard = {"type": "ir.actions.act_window",
                   "res_model": "polish.test.entry.wizard",

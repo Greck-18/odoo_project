@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="music_artist_tree_wizard_form" model="ir.ui.view">
+        <field name="name">music.artist.tree.wizard.form</field>
+        <field name="model">music.artist.tree.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Artist Wizard">
+                <group>
+                    <field name="name"/>
+                    <field name="month_listeners"/>
+                    <field name="single_listeners"/>
+                </group>
+                <group>
+                    <field name="single_ids"/>
+                </group>
+                <footer>
+                    <button string="Update" type="object" name="update" class="btn-primary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

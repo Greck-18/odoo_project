@@ -1,0 +1,410 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* all_music
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-10 11:22+0000\n"
+"PO-Revision-Date: 2021-11-10 11:22+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: all_music
+#: model_terms:ir.ui.view,arch_db:all_music.single_kanban_view
+msgid "<b attrs=\"{'invisible': [('album_id', '=', False)]}\">Album:</b>"
+msgstr "Альбом:"
+
+#. module: all_music
+#: model_terms:ir.ui.view,arch_db:all_music.music_album_kanban_view
+#: model_terms:ir.ui.view,arch_db:all_music.single_kanban_view
+msgid "<b attrs=\"{'invisible': [('artist_id', '=', False)]}\">Artist:</b>"
+msgstr "Артист:"
+
+#. module: all_music
+#: model_terms:ir.ui.view,arch_db:all_music.music_album_kanban_view
+#: model_terms:ir.ui.view,arch_db:all_music.single_kanban_view
+msgid "<b attrs=\"{'invisible': [('group_id', '=', False)]}\">Group:</b>"
+msgstr "Группа:"
+
+#. module: all_music
+#: model_terms:ir.ui.view,arch_db:all_music.music_artist_kanban_view
+msgid "<b>Age:</b>"
+msgstr "Возраст:"
+
+#. module: all_music
+#: model_terms:ir.ui.view,arch_db:all_music.music_group_kanban_view
+msgid "<b>Album:</b>"
+msgstr "Альбом:"
+
+#. module: all_music
+#: model_terms:ir.ui.view,arch_db:all_music.music_artist_kanban_view
+msgid "<b>Country:</b>"
+msgstr "Страна:"
+
+#. module: all_music
+#: model_terms:ir.ui.view,arch_db:all_music.single_kanban_view
+msgid "<b>Duration:</b>"
+msgstr "Длительность:"
+
+#. module: all_music
+#: model_terms:ir.ui.view,arch_db:all_music.music_artist_kanban_view
+msgid "<b>Group:</b>"
+msgstr "Группа:"
+
+#. module: all_music
+#: model_terms:ir.ui.view,arch_db:all_music.music_artist_kanban_view
+#: model_terms:ir.ui.view,arch_db:all_music.music_group_kanban_view
+#: model_terms:ir.ui.view,arch_db:all_music.single_kanban_view
+msgid "<b>Listeners:</b>"
+msgstr "Прослушивания:"
+
+#. module: all_music
+#: model_terms:ir.ui.view,arch_db:all_music.music_album_kanban_view
+#: model_terms:ir.ui.view,arch_db:all_music.music_artist_kanban_view
+#: model_terms:ir.ui.view,arch_db:all_music.music_group_kanban_view
+#: model_terms:ir.ui.view,arch_db:all_music.single_kanban_view
+msgid "<b>Name:</b>"
+msgstr "Имя:"
+
+#. module: all_music
+#: model_terms:ir.ui.view,arch_db:all_music.music_album_kanban_view
+msgid "<b>Release:</b>"
+msgstr "Дата выхода:"
+
+#. module: all_music
+#: model_terms:ir.ui.view,arch_db:all_music.music_artist_kanban_view
+msgid "<b>Sex:</b>"
+msgstr "Пол"
+
+#. module: all_music
+#: model:ir.model.fields,field_description:all_music.field_music_artist__age
+msgid "Age"
+msgstr "Возраст"
+
+#. module: all_music
+#: model:ir.model.fields,field_description:all_music.field_music_group__album_ids
+#: model:ir.model.fields,field_description:all_music.field_single__album_id
+#: model_terms:ir.ui.view,arch_db:all_music.single_form_search
+msgid "Album"
+msgstr "Альбом"
+
+#. module: all_music
+#: model:ir.model.fields,field_description:all_music.field_music_artist__album_ids
+#: model_terms:ir.ui.view,arch_db:all_music.music_artist_form_view
+msgid "Albums"
+msgstr "Альбомы"
+
+#. module: all_music
+#: model:ir.model.fields,field_description:all_music.field_music_album__artist_id
+#: model:ir.model.fields,field_description:all_music.field_music_group__artist_ids
+#: model:ir.model.fields,field_description:all_music.field_single__artist_id
+#: model_terms:ir.ui.view,arch_db:all_music.music_album_form_search
+#: model_terms:ir.ui.view,arch_db:all_music.single_form_search
+msgid "Artist"
+msgstr "Артист"
+
+#. module: all_music
+#: model_terms:ir.ui.view,arch_db:all_music.music_wizard_form
+msgid "Cancel"
+msgstr "Отмена"
+
+#. module: all_music
+#: code:addons/all_music/models/connected_models/music_artist.py:0
+#, python-format
+msgid "Chose another name for song!"
+msgstr "Выберите другое название песни!"
+
+#. module: all_music
+#: model:ir.model.fields,field_description:all_music.field_music_artist__country_id
+#: model_terms:ir.ui.view,arch_db:all_music.music_artist_form_search
+msgid "Country"
+msgstr "Страна"
+
+#. module: all_music
+#: model_terms:ir.actions.act_window,help:all_music.music_artist_action
+msgid "Create your first artist!"
+msgstr "Создайте вашего первого артиста!"
+
+#. module: all_music
+#: model:ir.model.fields,field_description:all_music.field_music_album__create_uid
+#: model:ir.model.fields,field_description:all_music.field_music_artist__create_uid
+#: model:ir.model.fields,field_description:all_music.field_music_group__create_uid
+#: model:ir.model.fields,field_description:all_music.field_music_menu_wizard__create_uid
+#: model:ir.model.fields,field_description:all_music.field_single__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: all_music
+#: model:ir.model.fields,field_description:all_music.field_music_album__create_date
+#: model:ir.model.fields,field_description:all_music.field_music_artist__create_date
+#: model:ir.model.fields,field_description:all_music.field_music_group__create_date
+#: model:ir.model.fields,field_description:all_music.field_music_menu_wizard__create_date
+#: model:ir.model.fields,field_description:all_music.field_single__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: all_music
+#: model:ir.model.fields,field_description:all_music.field_music_album__release_date
+msgid "Date of release"
+msgstr "Дата выхода"
+
+#. module: all_music
+#: model:ir.model.fields,field_description:all_music.field_music_album__display_name
+#: model:ir.model.fields,field_description:all_music.field_music_artist__display_name
+#: model:ir.model.fields,field_description:all_music.field_music_group__display_name
+#: model:ir.model.fields,field_description:all_music.field_music_menu_wizard__display_name
+#: model:ir.model.fields,field_description:all_music.field_single__display_name
+msgid "Display Name"
+msgstr "Отображаемое имя"
+
+#. module: all_music
+#: model:ir.model.fields,field_description:all_music.field_single__duration
+msgid "Duration"
+msgstr "Длительность"
+
+#. module: all_music
+#: model:ir.model.fields.selection,name:all_music.selection__music_artist__sex__female
+msgid "Female"
+msgstr "Женщина"
+
+#. module: all_music
+#: model:ir.model.fields,field_description:all_music.field_music_album__group_id
+#: model:ir.model.fields,field_description:all_music.field_music_artist__group_id
+#: model:ir.model.fields,field_description:all_music.field_single__group_id
+#: model_terms:ir.ui.view,arch_db:all_music.music_album_form_search
+#: model_terms:ir.ui.view,arch_db:all_music.music_artist_form_search
+#: model_terms:ir.ui.view,arch_db:all_music.single_form_search
+msgid "Group"
+msgstr "Группа"
+
+#. module: all_music
+#: model_terms:ir.ui.view,arch_db:all_music.music_album_form_search
+#: model_terms:ir.ui.view,arch_db:all_music.music_artist_form_search
+#: model_terms:ir.ui.view,arch_db:all_music.single_form_search
+msgid "Group By"
+msgstr "Группировать"
+
+#. module: all_music
+#: code:addons/all_music/models/connected_models/music_album.py:0
+#: code:addons/all_music/models/connected_models/music_artist.py:0
+#: code:addons/all_music/models/connected_models/music_group.py:0
+#: code:addons/all_music/models/connected_models/singles.py:0
+#, python-format
+msgid "Group with the same name already exists"
+msgstr "Группа с таким названием уже существует"
+
+#. module: all_music
+#: model:ir.model.fields,field_description:all_music.field_music_album__id
+#: model:ir.model.fields,field_description:all_music.field_music_artist__id
+#: model:ir.model.fields,field_description:all_music.field_music_group__id
+#: model:ir.model.fields,field_description:all_music.field_music_menu_wizard__id
+#: model:ir.model.fields,field_description:all_music.field_single__id
+msgid "ID"
+msgstr ""
+
+#. module: all_music
+#: model:ir.model.fields,field_description:all_music.field_music_artist__avatar
+#: model:ir.model.fields,field_description:all_music.field_music_group__avatar
+#: model_terms:ir.ui.view,arch_db:all_music.music_artist_kanban_view
+msgid "Image"
+msgstr "Изображение"
+
+#. module: all_music
+#: model:ir.model,name:all_music.model_music_group
+msgid "Info about group"
+msgstr "Информация о группе"
+
+#. module: all_music
+#: model:ir.model,name:all_music.model_music_artist
+msgid "Info about musician"
+msgstr "Информация об артисте"
+
+#. module: all_music
+#: model:ir.model,name:all_music.model_single
+msgid "Info about song"
+msgstr "Информация о песне"
+
+#. module: all_music
+#: model_terms:ir.ui.view,arch_db:all_music.music_wizard_form
+msgid "Input file"
+msgstr "Вставить файл"
+
+#. module: all_music
+#: model:ir.model.fields,field_description:all_music.field_music_menu_wizard__xml_file
+msgid "Input xml"
+msgstr "Вставить xml"
+
+#. module: all_music
+#: model_terms:ir.ui.view,arch_db:all_music.music_wizard_form
+msgid "Input xml file"
+msgstr "Вставить xml файл"
+
+#. module: all_music
+#: code:addons/all_music/wizard/music_artist_wizard.py:0
+#, python-format
+msgid "Input your xml file!"
+msgstr "Вставьте xml файл!"
+
+#. module: all_music
+#: model:ir.model.fields,field_description:all_music.field_music_album____last_update
+#: model:ir.model.fields,field_description:all_music.field_music_artist____last_update
+#: model:ir.model.fields,field_description:all_music.field_music_group____last_update
+#: model:ir.model.fields,field_description:all_music.field_music_menu_wizard____last_update
+#: model:ir.model.fields,field_description:all_music.field_single____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: all_music
+#: model:ir.model.fields,field_description:all_music.field_music_album__write_uid
+#: model:ir.model.fields,field_description:all_music.field_music_artist__write_uid
+#: model:ir.model.fields,field_description:all_music.field_music_group__write_uid
+#: model:ir.model.fields,field_description:all_music.field_music_menu_wizard__write_uid
+#: model:ir.model.fields,field_description:all_music.field_single__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: all_music
+#: model:ir.model.fields,field_description:all_music.field_music_album__write_date
+#: model:ir.model.fields,field_description:all_music.field_music_artist__write_date
+#: model:ir.model.fields,field_description:all_music.field_music_group__write_date
+#: model:ir.model.fields,field_description:all_music.field_music_menu_wizard__write_date
+#: model:ir.model.fields,field_description:all_music.field_single__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: all_music
+#: model:ir.model.fields,field_description:all_music.field_single__listeners
+msgid "Listeners"
+msgstr "Прослушивания"
+
+#. module: all_music
+#: model:ir.model.fields.selection,name:all_music.selection__music_artist__sex__male
+msgid "Male"
+msgstr "Мужчина"
+
+#. module: all_music
+#: model:ir.model.fields,field_description:all_music.field_single__members
+msgid "Members"
+msgstr "Участники"
+
+#. module: all_music
+#: model:ir.model,name:all_music.model_music_menu_wizard
+msgid "Menu wizard"
+msgstr "Мастер меню"
+
+#. module: all_music
+#: model:ir.model.fields,field_description:all_music.field_music_artist__month_listeners
+#: model:ir.model.fields,field_description:all_music.field_music_group__month_listeners
+msgid "Month listeners"
+msgstr "Месячные прослушивания"
+
+#. module: all_music
+#: model:ir.ui.menu,name:all_music.music_root
+msgid "Music"
+msgstr "Музыка"
+
+#. module: all_music
+#: model:ir.actions.act_window,name:all_music.music_album_action
+#: model:ir.ui.menu,name:all_music.music_album
+#: model_terms:ir.ui.view,arch_db:all_music.music_album_form_search
+#: model_terms:ir.ui.view,arch_db:all_music.music_album_tree_view
+msgid "Music Album"
+msgstr "Альбомы"
+
+#. module: all_music
+#: model:ir.actions.act_window,name:all_music.music_artist_action
+#: model:ir.ui.menu,name:all_music.music_artist_root
+#: model_terms:ir.ui.view,arch_db:all_music.music_artist_form_search
+#: model_terms:ir.ui.view,arch_db:all_music.music_artist_form_view
+#: model_terms:ir.ui.view,arch_db:all_music.music_artist_tree_view
+msgid "Music Artist"
+msgstr "Артисты"
+
+#. module: all_music
+#: model:ir.actions.act_window,name:all_music.music_group_action
+#: model:ir.ui.menu,name:all_music.music_group_root
+#: model_terms:ir.ui.view,arch_db:all_music.music_group_form_search
+#: model_terms:ir.ui.view,arch_db:all_music.music_group_form_view
+#: model_terms:ir.ui.view,arch_db:all_music.music_group_tree_view
+msgid "Music Group"
+msgstr "Группы"
+
+#. module: all_music
+#: model:ir.model,name:all_music.model_music_album
+msgid "Musician album"
+msgstr "Альбомы"
+
+#. module: all_music
+#: model:ir.model.fields,field_description:all_music.field_music_album__name
+#: model:ir.model.fields,field_description:all_music.field_music_artist__name
+#: model:ir.model.fields,field_description:all_music.field_music_group__name
+#: model:ir.model.fields,field_description:all_music.field_single__name
+#: model_terms:ir.ui.view,arch_db:all_music.music_artist_form_view
+msgid "Name"
+msgstr "Имя"
+
+#. module: all_music
+#: model:ir.model.fields.selection,name:all_music.selection__music_artist__sex__other
+msgid "Other"
+msgstr "Другой"
+
+#. module: all_music
+#: model:ir.model.fields,field_description:all_music.field_music_artist__sex
+msgid "Sex"
+msgstr "Пол"
+
+#. module: all_music
+#: model:ir.actions.act_window,name:all_music.single_action
+#: model_terms:ir.ui.view,arch_db:all_music.single_form_search
+#: model_terms:ir.ui.view,arch_db:all_music.single_form_view
+#: model_terms:ir.ui.view,arch_db:all_music.single_tree_view
+msgid "Single"
+msgstr "Сингл"
+
+#. module: all_music
+#: model:ir.model.fields,field_description:all_music.field_music_artist__single_ids
+#: model_terms:ir.ui.view,arch_db:all_music.music_artist_form_view
+msgid "Singles"
+msgstr "Синглы"
+
+#. module: all_music
+#: model:ir.model.fields,field_description:all_music.field_music_album__single_ids
+#: model:ir.model.fields,field_description:all_music.field_music_group__single_ids
+msgid "Song"
+msgstr "Песня"
+
+#. module: all_music
+#: model:ir.ui.menu,name:all_music.single_root
+msgid "Songs"
+msgstr "Песни"
+
+#. module: all_music
+#: model:ir.ui.menu,name:all_music.music_wizard_menu
+msgid "Upload xml"
+msgstr "Загрузить xml"
+
+#. module: all_music
+#: model_terms:ir.actions.act_window,help:all_music.music_album_action
+msgid "You has no music album yet"
+msgstr "У вас еще нет  альбома"
+
+#. module: all_music
+#: model_terms:ir.actions.act_window,help:all_music.single_action
+msgid "You has no songs yet"
+msgstr "У вас еще нет песен"
+
+#. module: all_music
+#: model_terms:ir.actions.act_window,help:all_music.music_group_action
+msgid "create your first group!"
+msgstr "Создайте вашу первую группу!"
+
+#. module: all_music
+#: model:ir.actions.act_window,name:all_music.music_wizard_action
+msgid "music.wizard.action"
+msgstr ""

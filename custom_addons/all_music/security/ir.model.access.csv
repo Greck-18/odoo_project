@@ -4,4 +4,4 @@ access_music_album,music.album,model_music_album,base.group_user,1,1,1,1
 access_music_group,music.group,model_music_group,base.group_user,1,1,1,1
 access_single,single,model_single,base.group_user,1,1,1,1
 access_music_menu_wizard,music.menu.wizard,model_music_menu_wizard,base.group_user,1,1,1,1
-
+access_music_artist_tree_wizard,music.artist.tree.wizard,model_music_artist_tree_wizard,base.group_user,1,1,1,1

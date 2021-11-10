@@ -8,10 +8,13 @@
         <field name="model">music.artist</field>
         <field name="arch" type="xml">
             <tree string="Music Artist">
+                <button name="wizard" string="edit" type="object" class="oe_highlight"/>
                 <field name="name"/>
                 <field name="age"/>
+                <field name="sex"/>
                 <field name="country_id"/>
                 <field name="month_listeners"/>
+                <field name="single_listeners"/>
                 <field name="avatar"/>
                 <field name="single_ids"/>
                 <field name="album_ids"/>
@@ -38,8 +41,10 @@
                         </group>
                         <group>
                             <field name="age"/>
+                            <field name="sex"/>
                             <field name="country_id"/>
                             <field name="month_listeners"/>
+                            <field name="single_listeners"/>
                             <field name="group_id"/>
                         </group>
                     </group>
@@ -64,15 +69,18 @@
             <kanban class="o_music_artist">
                 <field name="id"/>
                 <field name="name"/>
+                <field name="sex"/>
                 <field name="age"/>
                 <field name="country_id"/>
                 <field name="month_listeners"/>
+                <field name="single_listeners"/>
                 <field name="avatar" nolabel="1" widget="image" class="oe_right oe_avatar"/>
                 <templates>
                     <t t-name="kanban-box">
                         <div t-attf-class="oe_kanban_global_click">
                             <div class="o_kanban_image">
-                                <img t-att-src="kanban_image('music.artist', 'avatar',record.id.raw_value)" alt="Image"/>
+                                <img t-att-src="kanban_image('music.artist', 'avatar',record.id.raw_value)"
+                                     alt="Image"/>
                             </div>
                             <div class="oe_kanban_details">
                                 <ul>
@@ -85,6 +93,10 @@
                                         <field name="age"/>
                                     </li>
                                     <li>
+                                        <b>Sex:</b>
+                                        <field name="sex"/>
+                                    </li>
+                                    <li>
                                         <b>Country:</b>
                                         <field name="country_id"/>
                                     </li>
@@ -93,9 +105,14 @@
                                         <field name="group_id"/>
                                     </li>
                                     <li>
-                                        <b>Listeners:</b>
+                                        <b>Month Listeners:</b>
                                         <field name="month_listeners"/>
                                     </li>
+                                    <li>
+                                        <b>Single Listeners:</b>
+                                        <field name="single_listeners"/>
+                                    </li>
+
                                 </ul>
                             </div>
                         </div>
